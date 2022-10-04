@@ -9,7 +9,6 @@
 
 </head>
 <body>
-
 <!-- Main Header -->
 
 <nav id="navigation" class="site-header navigation navigation-justified header--sticky">
