@@ -114,15 +114,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 align-center mr-auto ml-auto mb-5">
-					<h2>POWERFUL HOSTING SERVICES</h2>
-					<p class="fs-18 fw-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+					<h2>FREE PROXY LIST</h2>
+					<p class="fs-18 fw-medium">We always try to provide the high-quality proxies list, even if it's a free proxy list.</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-4 mb-lg-0">
 					<div class="crumina-module crumina-info-box info-box--icon-scaled">
 
-						<h5 class="info-box-title">Ultimate Speed</h5>
+						<h5 class="info-box-title">Hide your ip</h5>
 
 						<div class="info-box-thumb">
 
@@ -158,7 +158,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-4 mb-lg-0">
 					<div class="crumina-module crumina-info-box info-box--icon-scaled">
 
-						<h5 class="info-box-title">Money-back Guarantee</h5>
+						<h5 class="info-box-title">Great Support</h5>
 
 						<div class="info-box-thumb">
 
