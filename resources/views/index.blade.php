@@ -78,37 +78,36 @@
 
 	<section class="medium-section-padding bg-grey">
 		<div class="container">
-			<div class="row justify-content-between">
-				<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-					<h4>It all starts with a domain name</h4>
-				</div>
-				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-					<form>
-						<div class="input-btn--inline">
-							<input class="input--white" type="email" placeholder="Domain name">
-							<button type="button" class="crumina-button button--primary button--l">SEARCH</button>
-						</div>
-					</form>
-					<div class="domain-list mt-4">
-						<div class="domain-list-item">
-							<div class="domain-list-item-name c-blue-dark"><span class="c-blue">.</span>com</div>
-							<div class="domain-list-item-price">$12.95</div>
-						</div>
-						<div class="domain-list-item">
-							<div class="domain-list-item-name c-dark"><span class="c-yellow">.</span>net</div>
-							<div class="domain-list-item-price">$16.58</div>
-						</div>
-						<div class="domain-list-item">
-							<div class="domain-list-item-name c-orange"><span class="c-dark">.</span>info</div>
-							<div class="domain-list-item-price">$4.99</div>
-						</div>
-						<div class="domain-list-item">
-							<div class="domain-list-item-name c-light-grey"><span class="c-lime">.</span>store</div>
-							<div class="domain-list-item-price">$65.00</div>
-						</div>
-					</div>
-				</div>
-			</div>
+            <table class="table table-responsive-lg table--style3 align-center">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Proxy</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Protocol</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Last Checked</th>
+                </tr>
+                </thead>
+                <tbody>
+
+    <tr class="font-weight-bold">
+        <th scope="row">zadazd</th>
+        <td>zadzad</td>
+        <td>zadzad</td>
+        <td>zadzad</td>
+        <td><span class="label-category label--red">zadzad</span></td>
+        <td>zedzed</td>
+    </tr>
+
+                </tbody>
+
+            </table>
+
+
+            <div class="universal-btn-wrapper d-flex justify-content-center">
+                <a href="ergerg" class="crumina-button button--dark button--l">FREE PROXY LIST</a>
+            </div>
 		</div>
 	</section>
 
