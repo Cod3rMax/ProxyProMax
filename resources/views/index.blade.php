@@ -181,14 +181,14 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-md-0">
-					<h2>WHY GO WITH HOSTSIGHT</h2>
-					<p class="fs-18 fw-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+					<h4>WHY CHOOSE PROXYPROMAX?</h4>
+					<p class="fs-18 fw-medium">You're wondering now why should i use your network?</p>
 					<div class="accordion crumina-module crumina-accordion accordion--style1 mt-5" id="accordion1">
 						<div class="card">
 							<div class="card-header" id="headingOne">
 								<h2 class="mb-0">
 									<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-										Award-winning support
+										Free Daily proxies
 										<span class="icons">
 											<svg class="crumina-icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
 											<svg class="crumina-icon active icon-minus"><use xlink:href="#icon-minus"></use></svg>
@@ -199,7 +199,7 @@
 
 							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion1">
 								<div class="card-body">
-									Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim metus aliquam eleifend.
+									Always Free Daily proxies updated every 30mn with great support.
 								</div>
 							</div>
 						</div>
@@ -207,7 +207,7 @@
 							<div class="card-header" id="headingTwo">
 								<h2 class="mb-0">
 									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										The vision for our mission
+										Highly Anonymous Proxies
 										<span class="icons">
 											<svg class="crumina-icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
 											<svg class="crumina-icon active icon-minus"><use xlink:href="#icon-minus"></use></svg>
@@ -217,15 +217,17 @@
 							</div>
 							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion1">
 								<div class="card-body">
-									Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim metus aliquam eleifend.
+									We provide Elite Proxy / Highly Anonymous Proxy
 								</div>
 							</div>
 						</div>
+
+
 						<div class="card">
 							<div class="card-header" id="headingThree">
 								<h2 class="mb-0">
 									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-										All in one place
+										Undetectable Proxies
 										<span class="icons">
 											<svg class="crumina-icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
 											<svg class="crumina-icon active icon-minus"><use xlink:href="#icon-minus"></use></svg>
@@ -235,18 +237,57 @@
 							</div>
 							<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion1">
 								<div class="card-body">
-									Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim metus aliquam eleifend.
+									The websites can't detect that you are using a proxy.
 								</div>
 							</div>
 						</div>
+
+
+
+                        <div class="card">
+							<div class="card-header" id="headingFour">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+										High Quality Proxies
+										<span class="icons">
+											<svg class="crumina-icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
+											<svg class="crumina-icon active icon-minus"><use xlink:href="#icon-minus"></use></svg>
+										</span>
+									</button>
+								</h2>
+							</div>
+							<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion1">
+								<div class="card-body">
+									We always try to provide the high-quality list, even if it's a free proxy list.
+								</div>
+							</div>
+						</div>
+
+
+
+                        <div class="card">
+							<div class="card-header" id="headingFive">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+										Fresh Proxies List
+										<span class="icons">
+											<svg class="crumina-icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
+											<svg class="crumina-icon active icon-minus"><use xlink:href="#icon-minus"></use></svg>
+										</span>
+									</button>
+								</h2>
+							</div>
+							<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion1">
+								<div class="card-body">
+									Our proxy site list update proxy list automatically every 10-30 minutes to get you new fresh proxies.
+								</div>
+							</div>
+						</div>
+
+
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-
-					<img loading="lazy" src="img/demo-content/images/image15.png" alt="hostsight">
-
-				</div>
 			</div>
 		</div>
 	</section>
