@@ -43,7 +43,6 @@
 
 					<div class="container">
 						<div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-0 align-left">
 
 								<div class="slider-content">
 
@@ -57,13 +56,6 @@
 									</div>
 
 								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-								<div class="slider-thumb" data-swiper-parallax="-400" data-swiper-parallax-duration="600">
-									<img class="swiper-lazy" src="img/demo-content/images/slider4.png" alt="slider">
-								</div>
-							</div>
 
 						</div>
 					</div>
