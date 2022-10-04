@@ -7,9 +7,6 @@
 
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/vendors/Bootstrap/bootstrap.min.css') }}">
-	<link href="{{ asset('css/plugins/navigation.min.css') }}" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/theme-font.min.css') }}">
 
 
 
@@ -1695,6 +1692,7 @@
 
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
+
 
 
 </body>
