@@ -33,99 +33,11 @@
 			</svg>
 		</div>
 
-		<div class="swiper-container" data-effect="fade" data-show-items="1" data-change-handler="thumbsParent" data-prev-next="1" data-autoplay="4000">
 
 			<!-- Additional required wrapper -->
 			<div class="swiper-wrapper">
 				<!-- Slides -->
-				<div class="swiper-slide stunning-header-bg2">
 
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12">
-
-								<div class="slider-content">
-
-									<h2 class="slider-content-title" data-swiper-parallax="-100">FAST WORDPRESS HOSTING FOR EVERYBODY</h2>
-
-									<p class="slider-content-text" data-swiper-parallax="-200">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-
-									<div class="universal-btn-wrapper">
-										<a href="02_wp_host.html" class="crumina-button button--blue button--l">LEARN MORE</a>
-										<a href="27_pricing_tables.html" class="crumina-button button--red button--l">BUY IT NOW</a>
-									</div>
-
-								</div>
-
-								<div class="slider-thumb" data-swiper-parallax="-400" data-swiper-parallax-duration="600">
-									<img class="swiper-lazy" src="img/demo-content/images/slider1.png" alt="slider">
-									<div class="swiper-lazy-preloader"></div>
-								</div>
-
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-
-				<div class="swiper-slide stunning-header-bg3">
-
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-0 align-left">
-								<div class="slider-content">
-
-									<h2 class="slider-content-title" data-swiper-parallax="-100">SHARED HOSTING THAT SUPPORT YOUR GOAL</h2>
-
-									<p class="slider-content-text" data-swiper-parallax="-200">Imperdiet massa tincidunt nunc pulvinar. Volutpat est velit egestas dui id ornare arcu odio ut. Gravida in fermentum et sollicitudin ac orci. Massa ultricies mi quis hendrerit.</p>
-
-									<div class="universal-btn-wrapper">
-										<a href="03_shared_host.html" class="crumina-button button--blue button--l">LEARN MORE</a>
-										<a href="27_pricing_tables.html" class="crumina-button button--red button--l">BUY IT NOW</a>
-									</div>
-
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-								<div class="slider-thumb" data-swiper-parallax="-400" data-swiper-parallax-duration="600">
-									<img class="swiper-lazy" src="img/demo-content/images/slider2.png" alt="slider">
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="swiper-slide stunning-header-bg4">
-
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-0">
-								<div class="slider-thumb" data-swiper-parallax="-400" data-swiper-parallax-duration="600">
-									<img class="swiper-lazy" src="img/demo-content/images/slider3.png" alt="slider">
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 align-left">
-								<div class="slider-content">
-
-									<h2 class="slider-content-title" data-swiper-parallax="-100">VPS HOSTING FOR SPEED AND EASE OF USE</h2>
-
-									<p class="slider-content-text" data-swiper-parallax="-200">Diam quis enim lobortis scelerisque. Vitae tempus quam pellentesque nec nam aliquam sem. Feugiat scelerisque varius morbi enim nunc faucibus donec massa sapien faucibus.</p>
-
-									<div class="universal-btn-wrapper">
-										<a href="03_shared_host.html" class="crumina-button button--orange button--l">LEARN MORE</a>
-										<a href="27_pricing_tables.html" class="crumina-button button--dark button--l">BUY IT NOW</a>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
 
 				<div class="swiper-slide stunning-header-bg5">
 
@@ -158,67 +70,7 @@
 
 				</div>
 
-				<div class="swiper-slide stunning-header-bg6">
 
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-0 align-left">
-								<div class="slider-content">
-
-									<h2 class="slider-content-title" data-swiper-parallax="-100">THE BEST CLOUD HOSTING PROVIDERS</h2>
-
-									<p class="slider-content-text" data-swiper-parallax="-200">Imperdiet massa tincidunt nunc pulvinar. Volutpat est velit egestas dui id ornare arcu odio ut. Gravida in fermentum et sollicitudin ac orci. Massa ultricies mi quis hendrerit.</p>
-
-									<div class="universal-btn-wrapper">
-										<a href="03_shared_host.html" class="crumina-button button--blue button--l">LEARN MORE</a>
-										<a href="27_pricing_tables.html" class="crumina-button button--lime button--l">BUY IT NOW</a>
-									</div>
-
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-								<div class="slider-thumb" data-swiper-parallax="-400" data-swiper-parallax-duration="600">
-									<img class="swiper-lazy" src="img/demo-content/images/slider5.png" alt="slider">
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-
-				<div class="swiper-slide stunning-header-bg7">
-
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-0">
-								<div class="slider-thumb" data-swiper-parallax="-400" data-swiper-parallax-duration="600">
-									<img class="swiper-lazy" src="img/demo-content/images/slider6.png" alt="slider">
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 align-left">
-								<div class="slider-content">
-
-									<h2 class="slider-content-title" data-swiper-parallax="-100">FIND AND REGISTER YOUR PERFECT DOMAIN NAME</h2>
-
-									<p class="slider-content-text" data-swiper-parallax="-200">Imperdiet massa tincidunt nunc pulvinar. Volutpat est velit egestas dui id ornare arcu odio ut. Gravida in fermentum et sollicitudin ac orci. Massa ultricies mi quis hendrerit.</p>
-
-									<div class="universal-btn-wrapper">
-										<a href="03_shared_host.html" class="crumina-button button--dark button--l">DOMAIN NAME SEARCH</a>
-										<a href="27_pricing_tables.html" class="crumina-button button--orange button--l">LEARN MORE</a>
-									</div>
-
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-
-			</div>
 
 			<!--Pagination tabs-->
 
