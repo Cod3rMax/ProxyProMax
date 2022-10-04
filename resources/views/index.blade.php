@@ -1695,15 +1695,6 @@
 
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/Bootstrap/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('js/js-plugins/navigation.min.js') }}"></script>
-<script src="{{ asset('js/js-plugins/material.min.js') }}"></script>
-<script src="{{ asset('js/js-plugins/swiper.min.js') }}"></script>
-<script src="{{ asset('js/js-plugins/smooth-scroll.min.js') }}"></script>
-<script src="{{ asset('js/js-plugins/jquery.matchHeight.min.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
-<script src="{{ asset('js/svg-loader.js') }}"></script>
-
 
 
 </body>
