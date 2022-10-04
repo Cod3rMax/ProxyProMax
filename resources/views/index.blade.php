@@ -48,13 +48,12 @@
 
 								<div class="slider-content">
 
-									<h2 class="slider-content-title" data-swiper-parallax="-100">DEDICATED SERVER AND POWERFUL COMPUTING RESOURCES</h2>
+									<h2 class="slider-content-title" data-swiper-parallax="-100">Get Your Daily Proxies List For Free With Our Big Network.</h2>
 
-									<p class="slider-content-text" data-swiper-parallax="-200">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+									<p class="slider-content-text" data-swiper-parallax="-200">Surf the internet safely without concerns about getting your identity exposed.</p>
 
 									<div class="universal-btn-wrapper">
-										<a href="05_dedicated_server.html" class="crumina-button button--dark button--l">LEARN MORE</a>
-										<a href="27_pricing_tables.html" class="crumina-button button--yellow button--l">BUY IT NOW</a>
+										<a href="27_pricing_tables.html" class="crumina-button button--yellow button--l">Get Proxies</a>
 									</div>
 
 								</div>
