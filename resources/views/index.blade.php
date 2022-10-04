@@ -296,8 +296,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 align-center mb-5">
-					<h2 class="text-white">DATA CENTER LOCATIONS</h2>
-					<p class="fs-18 fw-medium c-light-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+					<h2 class="text-white">Most Proxies Locations</h2>
 				</div>
 
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5">
@@ -307,29 +306,19 @@
 
 							<img loading="lazy" src="img/theme-content/images/map-dark.png" alt="map">
 
-							<span class="location-server-item location-server-item-border-dark bg-accent-primary" style="top: 19%; left: 50%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>GERMAN SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-yellow-themes" style="top: 13%; left: 15%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>CANADA SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-orange-themes" style="top: 24%; left: 18%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>USA SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-red-themes" style="top: 28%; left: 11%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>USA SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-accent-primary" style="top: 60%; left: 22%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>ARGENTINA SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-blue-themes" style="top: 74%; left: 27%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>BRAZIL SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-red-themes" style="top: 41%; left: 46%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>UGANDA SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-orange-themes" style="top: 61%; left: 54%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>ZAMBIA SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-yellow-themes" style="top: 10%; left: 69%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>IRKUTSK SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-blue-themes" style="top: 25%; left: 63%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>ISRAEL SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-red-themes" style="top: 14%; left: 79%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>ARCHANGELSK SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
-							<span class="location-server-item location-server-item-border-dark bg-yellow-themes" style="top: 76%; left: 87%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>AUSTRALIA SERVER</span> </br>Dolor in reprehenderit in voluptate velit esse cillum dolore eu.."></span>
+							<span class="location-server-item location-server-item-border-dark bg-accent-primary" style="top: 19%; left: 50%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>GERMAN SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-yellow-themes" style="top: 13%; left: 15%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>CANADA SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-orange-themes" style="top: 24%; left: 18%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>USA SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-red-themes" style="top: 28%; left: 11%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>USA SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-accent-primary" style="top: 60%; left: 22%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>ARGENTINA SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-blue-themes" style="top: 74%; left: 27%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>BRAZIL SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-red-themes" style="top: 41%; left: 46%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>UGANDA SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-orange-themes" style="top: 61%; left: 54%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>ZAMBIA SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-yellow-themes" style="top: 10%; left: 69%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>IRKUTSK SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-blue-themes" style="top: 25%; left: 63%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>PALESTINE SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-red-themes" style="top: 14%; left: 79%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>ARCHANGELSK SERVER</span>"></span>
+							<span class="location-server-item location-server-item-border-dark bg-yellow-themes" style="top: 76%; left: 87%;" data-toggle="tooltip" data-placement="left" data-html="true" title="<span class='font-weight-bold'>AUSTRALIA SERVER</span>"></span>
 						</div>
-					</div>
-				</div>
-				<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 m-auto">
-					<div class="locations-servers-list">
-						<div class="locations-server-item">North America <span class="count">(36)</span></div>
-						<div class="locations-server-item">South America <span class="count">(42)</span></div>
-						<div class="locations-server-item">Europe <span class="count">(42)</span></div>
-						<div class="locations-server-item">Australia <span class="count">(26)</span></div>
-						<div class="locations-server-item">Asia <span class="count">(42)</span></div>
-						<div class="locations-server-item">Africa <span class="count">(42)</span></div>
 					</div>
 				</div>
 			</div>
