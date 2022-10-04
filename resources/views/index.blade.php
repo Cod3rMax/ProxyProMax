@@ -180,9 +180,9 @@
 	<section class="large-section-padding bg-yellow-themes">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-md-0">
-					<h4>WHY CHOOSE PROXYPROMAX?</h4>
-					<p class="fs-18 fw-medium">You're wondering now why should i use your network?</p>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-4 mb-md-0">
+					<h4 class="align-center">WHY CHOOSE PROXYPROMAX?</h4>
+					<p class="fs-18 fw-medium align-center">You're wondering now why should i use your network?</p>
 					<div class="accordion crumina-module crumina-accordion accordion--style1 mt-5" id="accordion1">
 						<div class="card">
 							<div class="card-header" id="headingOne">
