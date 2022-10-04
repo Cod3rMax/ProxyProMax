@@ -127,12 +127,12 @@
 						<div class="info-box-thumb">
 
 
-							<img loading="lazy" src="img/demo-content/icons/info-icon36.png" alt="icon">
+							<img loading="lazy" src="img/demo-content/icons/info-icon23.png" alt="icon">
 
 						</div>
 
 						<div class="info-box-content">
-							<p class="info-box-text">Sollicitudin ac orci phasellus egestas. Urna nunc id cursus metus aliquam eleifend. Neque vitae tempus quam pellentesque. Volutpat odio facilisis mauris sit amet massa vitae.</p>
+							<p class="info-box-text">Surf the internet safely without concerns about getting your identity exposed.</p>
 						</div>
 
 					</div>
@@ -150,7 +150,7 @@
 						</div>
 
 						<div class="info-box-content">
-							<p class="info-box-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
+							<p class="info-box-text">Our proxy site list update proxy list automatically every 10-30 minutes to get you new fresh proxies.</p>
 						</div>
 
 					</div>
@@ -163,12 +163,12 @@
 						<div class="info-box-thumb">
 
 
-							<img loading="lazy" src="img/demo-content/icons/info-icon38.png" alt="icon">
+							<img loading="lazy" src="img/demo-content/icons/info-icon19.png" style="height: 10.5em;" alt="icon">
 
 						</div>
 
 						<div class="info-box-content">
-							<p class="info-box-text">Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Dolor magna eget est lorem ipsum. Turpis egestas integer eget aliquet. Vitae semper quis lectus nulla at volutpat diam. </p>
+							<p class="info-box-text">We treat all our users equally, and we do provide 24/h support to serve you better.</p>
 						</div>
 
 					</div>
