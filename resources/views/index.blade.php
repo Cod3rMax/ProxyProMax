@@ -332,8 +332,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 m-auto align-center">
-					<h2>WHAT OUR CLIENTS SAY ABOUT US</h2>
-					<h6 class="fw-medium fs-18 text-white">Purus gravida quis blandit turpis cursus in hac. Sollicitudin aliquam ultrices sagittis orci a scelerisque.</h6>
+					<h2>WHAT OUR USERS SAY ABOUT US</h2>
 				</div>
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-3">
 					<div class="crumina-module crumina-module-slider crumina-slider--testimonial navigation-bottom-center pagination-bottom-center">
@@ -356,8 +355,7 @@
 									<div class="crumina-module crumina-testimonial-item testimonial--author-bottom">
 										<div class="testimonial-content">
 											<h6 class="testimonial-text">
-												Quisque egestas diam in arcu cursus euismod. Lectus urna duis convallis
-												convallis tellus. Sagittis orci a scelerisque purus turpis cursus.
+												Their product is simple, straight forward and free. I would definitely recommend them for your proxy needs.
 											</h6>
 										</div>
 										<div class="author-content-wrap">
@@ -365,8 +363,8 @@
 												<img loading="lazy" src="img/demo-content/avatars/author2.png" alt="avatar">
 											</div>
 											<div class="author-content">
-												<a href="#" class="author-name h6">Jonathan Simpson</a>
-												<div class="author-company">Envato Market</div>
+												<a href="#" class="author-name h6">Frolic Simpson</a>
+												<div class="author-company">USA</div>
 											</div>
 										</div>
 									</div>
@@ -375,9 +373,7 @@
 									<div class="crumina-module crumina-testimonial-item testimonial--author-bottom">
 										<div class="testimonial-content">
 											<h6 class="testimonial-text">
-												Purus gravida quis blandit turpis cursus in hac. Sollicitudin aliquam
-												ultrices sagittis orci a scelerisque. Quisque egestas diam in arcu
-												cursus euismod. Lectus urna duis convallis convallis tellus. Sagittis orci a scelerisque purus.
+												Well, I want to express my gratitude to the support team. We have been using the corporate solution for more than a year, of course there were problems, but support is always on our side, all issues are resolved quickly.
 											</h6>
 										</div>
 										<div class="author-content-wrap">
@@ -385,8 +381,8 @@
 												<img loading="lazy" src="img/demo-content/avatars/author1.png" alt="avatar">
 											</div>
 											<div class="author-content">
-												<a href="#" class="author-name h6">Jonathan Simpson</a>
-												<div class="author-company">Envato Market</div>
+												<a href="#" class="author-name h6">Jonathan Alex</a>
+												<div class="author-company">Canada</div>
 											</div>
 										</div>
 									</div>
@@ -395,8 +391,7 @@
 									<div class="crumina-module crumina-testimonial-item testimonial--author-bottom">
 										<div class="testimonial-content">
 											<h6 class="testimonial-text">
-												Quisque egestas diam in arcu cursus euismod. Lectus urna duis convallis
-												convallis tellus. Sagittis orci a scelerisque purus turpis cursus.
+												I have been renting a proxy on this service for 2 months already. I use it to work with social networks. There were no problems. Good service
 											</h6>
 										</div>
 										<div class="author-content-wrap">
@@ -404,8 +399,8 @@
 												<img loading="lazy" src="img/demo-content/avatars/author2.png" alt="avatar">
 											</div>
 											<div class="author-content">
-												<a href="#" class="author-name h6">Jonathan Simpson</a>
-												<div class="author-company">Envato Market</div>
+												<a href="#" class="author-name h6">Nikolay Gubbe</a>
+												<div class="author-company">Russia</div>
 											</div>
 										</div>
 									</div>
@@ -427,12 +422,12 @@
 		<div class="container">
 			<div class="row justify-content-between align-items-center">
 				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 mb-4 mb-md-0">
-					<h5 class="mb-0 text-white">Complete Hosting Solutions Only<span class="c-blue"> $2.95/month</span>*
+					<h5 class="mb-0 text-white">Ready to try our proxies?
 					</h5>
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-					<a href="02_wp_host.html" class="crumina-button button--blue button--m">TRY NOW FOR FREE</a>
+					<a href="02_wp_host.html" class="crumina-button button--blue button--m">GET FREE PROXY LIST</a>
 				</div>
 			</div>
 		</div>
