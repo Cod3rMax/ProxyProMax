@@ -186,7 +186,7 @@
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mb-0 mb-lg-0">
 					<div class="copyright">
-						<span>Copyright © 2020 <a href="#">ProxyProMax</a> Developed by <a href="https://Cod3rMax.com">Cod3rMax</a></span>
+						<span>Copyright © 2020-2022 <a href="#">ProxyProMax</a> Developed by <a href="https://Cod3rMax.com">Cod3rMax</a></span>
 					</div>
 				</div>
 			</div>
