@@ -136,7 +136,7 @@
 								<a href="#">
 
 
-									<img class="crumina-icon " loading="lazy" src="img/theme-content/social-icons/facebook.png" alt="facebook">
+									<img class="crumina-icon " loading="lazy" src="img/theme-content/social-icons/discord.png" alt="discord">
 
 								</a>
 							</li>
@@ -152,7 +152,7 @@
 								<a href="#">
 
 
-									<img class="crumina-icon " loading="lazy" src="img/theme-content/social-icons/google.png" alt="google">
+									<img class="crumina-icon " loading="lazy" src="img/theme-content/social-icons/instagram.png" alt="instagram">
 
 								</a>
 							</li>
@@ -161,14 +161,6 @@
 
 
 									<img class="crumina-icon " loading="lazy" src="img/theme-content/social-icons/youtube.png" alt="youtube">
-
-								</a>
-							</li>
-							<li>
-								<a href="#">
-
-
-									<img class="crumina-icon " loading="lazy" src="img/theme-content/social-icons/rss.png" alt="rss">
 
 								</a>
 							</li>
