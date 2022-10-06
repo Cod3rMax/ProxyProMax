@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>HOSTSight - Home</title>
 
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/vendors/Bootstrap/bootstrap.min.css') }}">
 
 </head>

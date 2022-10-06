@@ -5,7 +5,7 @@
 				<a href="index.html">
 
 
-					<img loading="lazy" src="img/demo-content/logo-white.png" alt="logo">
+					<img loading="lazy" src="{{ asset('img/logo.png') }}" alt="logo">
 
 				</a>
 			</div>
@@ -19,7 +19,7 @@
 					<a href="index.html">
 
 
-						<img loading="lazy" src="img/demo-content/logo-white.png" alt="logo">
+						<img loading="lazy" src="{{ asset('img/logo.png') }}" alt="logo">
 
 					</a>
 				</div>
