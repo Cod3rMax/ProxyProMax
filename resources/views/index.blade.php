@@ -535,10 +535,9 @@
 
     <!-- Footer -->
 
-    <x-main-footer-component></x-main-footer-component>
+    <x-main-footer-component :message="$SocialMediaLinks"></x-main-footer-component>
 
     <!-- ... end Footer -->
-
 
     <script src="{{ asset('js/jquery.min.js') }}"></script>
 

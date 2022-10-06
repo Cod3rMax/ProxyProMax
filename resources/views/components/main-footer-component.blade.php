@@ -133,30 +133,30 @@
 						<p>ProxyProMax offers the best checked proxies, for free & real human support.</p>
 						<ul class="socials">
 							<li>
-								<a href="#">
+								<a href="{{ $message[0]->Discord }}" target="SocialMedia">
 
-									<img class="crumina-icon " loading="lazy" src="img/theme-content/social-icons/discord.png" alt="discord">
-
-								</a>
-							</li>
-							<li>
-								<a href="#">
-
-									<img class="crumina-icon " loading="lazy" src="img/theme-content/social-icons/twitter.png" alt="twitter">
+									<img class="crumina-icon " loading="lazy" src="{{ asset('img/theme-content/social-icons/discord.png') }}" alt="discord">
 
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="{{ $message[0]->Twitter }}" target="SocialMedia">
 
-									<img class="crumina-icon " loading="lazy" src="img/theme-content/social-icons/instagram.png" alt="instagram">
+									<img class="crumina-icon " loading="lazy" src="{{ asset('img/theme-content/social-icons/twitter.png') }}" alt="twitter">
 
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="{{ $message[0]->Instagram }}" target="SocialMedia">
 
-									<img class="crumina-icon " loading="lazy" src="img/theme-content/social-icons/youtube.png" alt="youtube">
+									<img class="crumina-icon " loading="lazy" src="{{ asset('img/theme-content/social-icons/instagram.png') }}" alt="instagram">
+
+								</a>
+							</li>
+							<li>
+								<a href="{{ $message[0]->Youtube }}" target="SocialMedia">
+
+									<img class="crumina-icon " loading="lazy" src="{{ asset('img/theme-content/social-icons/youtube.png') }}" alt="youtube">
 
 								</a>
 							</li>
@@ -188,3 +188,5 @@
 		</svg>
 	</a>
 </footer>
+
+

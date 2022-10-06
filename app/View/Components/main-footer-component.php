@@ -6,14 +6,13 @@ use Illuminate\View\Component;
 
 class main-footer-component extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
+
+    public $message;
+
+
+    public function __construct($message)
     {
-        //
+        $this->message = $message;
     }
 
     /**
