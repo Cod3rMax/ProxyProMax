@@ -18,6 +18,5 @@ Route::get('/',[MainPageController::class,'index'])->name("MainPage");
 
 
 
-Route::get('PrivacyPolicy', function(){
-return view('PrivacyPolicy');
-})->name('PrivacyPolicy');
+Route::get('PrivacyPolicy', function(){ return view('PrivacyPolicy'); })->name('PrivacyPolicy');
+Route::get('Terms', function(){ return view('Terms'); })->name('Terms');
