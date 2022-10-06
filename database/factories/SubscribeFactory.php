@@ -17,7 +17,8 @@ class SubscribeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "email" => $this->faker->unique()->safeEmail(),
+            "IPAddress" => rand(100,200).".".rand(100,200).".".rand(50,200).".".rand(50,200).":".rand(1000,2000),
         ];
     }
 }
