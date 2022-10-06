@@ -124,10 +124,10 @@
 
 				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-0 mb-lg-0">
 					<div class="widget w-info">
-						<a href="index.html" class="site-logo">
+						<a href="{{ Route('MainPage') }}" class="site-logo">
 
 
-							<img loading="lazy" src="img/demo-content/logo-white.png" alt="logo" width="185">
+							<img loading="lazy" src="{{ asset('img/logo.png') }}" alt="logo" width="185">
 
 						</a>
 						<p>ProxyProMax offers the best checked proxies, for free & real human support.</p>
