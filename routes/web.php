@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[MainPageController::class,'index'])->name("MainPage");
 
 
-Route::get('test', function(){
-return view('policytemplate');
-});
+
+Route::get('PrivacyPolicy', function(){
+return view('PrivacyPolicy');
+})->name('PrivacyPolicy');
