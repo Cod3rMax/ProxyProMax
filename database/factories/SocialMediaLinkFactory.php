@@ -17,7 +17,10 @@ class SocialMediaLinkFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "Discord"   => "https://discord.com",
+            "Twitter"   => "https://Twitter.com",
+            "Instagram" => "https://instagram.com",
+            "Youtube"   => "https://youtube.com",
         ];
     }
 }
