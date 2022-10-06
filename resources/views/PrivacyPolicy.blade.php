@@ -132,10 +132,10 @@
 
     <div class="crumina-breadcrumbs breadcrumbs--red">&nbsp;</div>
 
+    <x-main-faq-component></x-main-faq-component>
 
 
-
-
+    <div class="crumina-breadcrumbs breadcrumbs--red">&nbsp;</div>
 </div>
 
 

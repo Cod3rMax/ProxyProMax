@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>HOSTSight - Home</title>
 
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/vendors/Bootstrap/bootstrap.min.css') }}">
 
 </head>
@@ -95,14 +95,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($Proxies as $key=>$Proxy)
+                        @foreach ($Proxies as $key => $Proxy)
                             <tr class="font-weight-bold">
                                 <th scope="row">{{ ++$key }}</th>
                                 <td>{{ $Proxy->ProxyIP }}</td>
                                 <td>{{ $Proxy->Country }}</td>
                                 <td>{{ $Proxy->Protocol }}</td>
-                                <td><span class="label-category @if($Proxy->Blacklisted == 1) label--red @else label--green @endif">{{ $Proxy->Blacklisted == 1 ? "BLACKLISTED" : "CLEAN" }}</span></td>
-                                <td>{{ $Proxy->updated_at != NULL ? $Proxy->updated_at->diffForHumans() : $Proxy->created_at->diffForHumans() }}</td>
+                                <td><span
+                                        class="label-category @if ($Proxy->Blacklisted == 1) label--red @else label--green @endif">{{ $Proxy->Blacklisted == 1 ? 'BLACKLISTED' : 'CLEAN' }}</span>
+                                </td>
+                                <td>{{ $Proxy->updated_at != null ? $Proxy->updated_at->diffForHumans() : $Proxy->created_at->diffForHumans() }}
+                                </td>
                             </tr>
                         @endforeach
 
@@ -207,8 +210,7 @@
 
                                 <span class="location-server-item location-server-item-border-dark bg-accent-primary"
                                     style="top: 19%; left: 50%;" data-toggle="tooltip" data-placement="left"
-                                    data-html="true"
-                                    title="<span class='font-weight-bold'>GERMAN SERVER</span>"></span>
+                                    data-html="true" title="<span class='font-weight-bold'>GERMAN SERVER</span>"></span>
                                 <span class="location-server-item location-server-item-border-dark bg-yellow-themes"
                                     style="top: 13%; left: 15%;" data-toggle="tooltip" data-placement="left"
                                     data-html="true"
