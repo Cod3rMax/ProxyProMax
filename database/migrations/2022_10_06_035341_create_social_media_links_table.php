@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('social_media_links', function (Blueprint $table) {
             $table->id();
+            $table->string("Discord");
+            $table->string("Twitter");
+            $table->string("Instagram");
+            $table->string("Youtube");
             $table->timestamps();
         });
     }
