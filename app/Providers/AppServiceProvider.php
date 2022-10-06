@@ -25,5 +25,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        view()->composer('*', function ($view) {
+            $view->with(["SocialMediaLinks"=>\App\Models\SocialMediaLink::all()]);
+        });
+
     }
 }
