@@ -20,7 +20,6 @@
 
 
 
-
     <div class="main-content-wrapper">
 
         <section class="crumina-module crumina-module-slider crumina-main-slider">
@@ -392,8 +391,6 @@
     <x-main-footer-component :message="$SocialMediaLinks"></x-main-footer-component>
 
     <!-- ... end Footer -->
-
-
 
 </body>
 
