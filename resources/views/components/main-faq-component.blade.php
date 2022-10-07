@@ -48,7 +48,7 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
                             data-parent="#accordion1">
                             <div class="card-body">
                                 We provide Elite Proxy / Highly Anonymous Proxy
@@ -75,7 +75,7 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree"
                             data-parent="#accordion1">
                             <div class="card-body">
                                 The websites can't detect that you are using a proxy.
@@ -103,7 +103,7 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                        <div id="collapseFour" class="collapse show" aria-labelledby="headingFour"
                             data-parent="#accordion1">
                             <div class="card-body">
                                 We always try to provide the high-quality list, even if it's a free proxy list.
@@ -131,7 +131,7 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                        <div id="collapseFive" class="collapse show" aria-labelledby="headingFive"
                             data-parent="#accordion1">
                             <div class="card-body">
                                 Our proxy site list update proxy list automatically every 10-30 minutes to get
