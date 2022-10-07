@@ -3,10 +3,7 @@
 		<div class="navigation-header">
 			<div class="navigation-logo">
 				<a href="index.html">
-
-
 					<img loading="lazy" src="{{ asset('img/logo.png') }}" alt="logo">
-
 				</a>
 			</div>
 			<div class="navigation-button-toggler">

@@ -1,51 +1,76 @@
 <template>
-    <section class="crumina-module crumina-module-slider crumina-main-slider">
-        <!--Prev next buttons-->
+  <section class="crumina-module crumina-module-slider crumina-main-slider">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
 
-        <div class="swiper-btn-prev">
-            <svg class="crumina-icon">
-                <use xlink:href="#icon-prev"></use>
-            </svg>
-        </div>
-
-        <div class="swiper-btn-next">
-            <svg class="crumina-icon">
-                <use xlink:href="#icon-next"></use>
-            </svg>
-        </div>
+      <div class="swiper-slide stunning-header-bg5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 m-auto">
 
 
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
+              <a href="/">
+                <img loading="lazy" src="/img/logo.png" alt="logo" />
+              </a>
+              <br><br>
 
+              <div class="form-item">
+                <input
+                  class="input--dark input--squared"
+                  type="text"
+                  placeholder="Enter your full name"
+                />
+              </div>
 
-            <div class="swiper-slide stunning-header-bg5">
+              <div class="form-item">
+                <input
+                  class="input--dark input--squared"
+                  type="text"
+                  placeholder="Enter your email"
+                />
+              </div>
 
-                <div class="container">
-                    <div class="row">
+              <div class="form-item">
+                <input
+                  class="input--dark input--squared"
+                  type="password"
+                  placeholder="Enter your password"
+                />
+              </div>
 
-                        <div class="slider-content">
+              <div class="form-item">
+                <input
+                  class="input--dark input--squared"
+                  type="password"
+                  placeholder="Confirm your password"
+                />
+              </div>
 
-                            <h2 class="slider-content-title" data-swiper-parallax="-100">Get Your Daily Proxies List
-                                For Free With Our Big Network.</h2>
-
-                            <p class="slider-content-text" data-swiper-parallax="-200">Surf the internet safely
-                                without concerns about getting your identity exposed.</p>
-
-                            <div class="universal-btn-wrapper">
-                                <a href="27_pricing_tables.html" class="crumina-button button--yellow button--l">Get
-                                    Proxies</a>
-                            </div>
-
-                        </div>
-
-                    </div>
+              <div class="form-item">
+                <div class="remember-wrapper text-white">
+                  <div class="checkbox">
+                    <label>Go back to login</label>
+                  </div>
                 </div>
-
+              </div>
+              <div class="form-item">
+                <button
+                  type="button"
+                  class="crumina-button button--primary button--l w-100"
+                >
+                  Sign Up
+                </button>
+              </div>
             </div>
-
+          </div>
         </div>
-
-    </section>
+      </div>
+    </div>
+  </section>
 </template>
+
+<script>
+export default {};
+</script>
+
