@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="zxx">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>HOSTSight - About</title>
-
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/vendors/Bootstrap/bootstrap.min.css') }}">
-
-</head>
-<body>
+<x-main-header-component></x-main-header-component>
 
 
     <!-- Main Header -->
