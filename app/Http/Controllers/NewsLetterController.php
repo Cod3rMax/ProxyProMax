@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SubscribeRequest;
 use App\Models\Subscribe;
 use Illuminate\Http\Request;
 
 class NewsLetterController extends Controller
 {
 
-    public function store(Request $request)
+    public function store(SubscribeRequest $request)
     {
 
 
-
-        if(Subscribe::where('email','=',$request->only(['email']))->first())
+        // check if email exists or not
+        /*         if(Subscribe::where('email','=',$request->only(['email']))->first())
         {
             return response()->json(['Email can not be stored!'],422);
-        }
-
-
+        } */
 
         if(!Subscribe::insert($request->merge(["IPAddress"=>$request->ip()])->toArray()))
         {

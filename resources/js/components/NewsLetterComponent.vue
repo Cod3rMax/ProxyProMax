@@ -54,10 +54,10 @@ export default {
         .then((response) => {
             console.log(response.data)
           //console.log(response.data[0]);
-          //this.form.email = null
+          this.form.email = null
         })
         .catch((error) => {
-          console.log("error: " + Object.values(error.response.data));
+          console.log(error.response.data.message);
         });
     },
   },
