@@ -23,7 +23,7 @@ class NewsLetterController extends Controller
         {
             return response()->json(['Email can not be stored!'],422);
         }
-            return response()->json(['You have been subscribed successfully!'],200);
+            return response()->json(['You have been subscribed!'],200);
 
 
     }

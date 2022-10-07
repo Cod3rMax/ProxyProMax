@@ -39,6 +39,7 @@
 
 <script>
 export default {
+
   data() {
     return {
       form: {
@@ -47,19 +48,42 @@ export default {
     };
   },
 
+
+
   methods: {
-    SubscribeUser() {
+    SubscribeUser()
+    {
       axios
         .post("api/Subscribe", this.form)
         .then((response) => {
-            console.log(response.data)
-          //console.log(response.data[0]);
-          this.form.email = null
+
+          this.Notification("success",response.data);
+
+          this.form.email = null;
         })
         .catch((error) => {
-          console.log(error.response.data.message);
+          this.Notification("error",error.response.data.message)
         });
     },
+
+
+
+    Notification(icon, message)
+    {
+      this.$swal({
+        icon: icon,
+        title: message,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", this.$swal.stopTimer);
+          toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+        },
+      });
+
+    },
+
+
+
+
   },
 };
 </script>
