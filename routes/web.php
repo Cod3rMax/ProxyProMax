@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainPageController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[MainPageController::class,'index'])->name("MainPage");
+Route::get('/',[MainPageController::class,'index'])->name('MainPage');
+
+
+Route::get('Auth/Registration',[AuthController::class,'index'])->name('UserRegistration');
 
 
 

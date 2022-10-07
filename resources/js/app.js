@@ -15,8 +15,8 @@ const app = createApp({});
 import NewsLetterComponent from './components/NewsLetterComponent.vue';
 app.component('newsletter-component', NewsLetterComponent);
 
-
-
+import RegistrationComponent from "./components/Auth/RegistrationComponent.vue";
+app.component('registration-component', RegistrationComponent);
 
 
 
