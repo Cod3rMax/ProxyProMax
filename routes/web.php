@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainPageController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,11 @@ Route::get('Auth/login',[AuthController::class,'login'])->name('UserLogin');
 
 Route::get('PrivacyPolicy', function(){ return view('PrivacyPolicy'); })->name('PrivacyPolicy');
 Route::get('Terms', function(){ return view('Terms'); })->name('Terms');
+
+
+Route::get('testlogin', function(){
+    if(Auth::check()){
+        return "logged in";
+    }
+    return "not logged";
+});

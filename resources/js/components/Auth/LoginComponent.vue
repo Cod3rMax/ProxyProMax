@@ -22,7 +22,23 @@
                   @click.prevent="this.showErrorsAlert = !this.showErrorsAlert"
                   >&times;</a
                 >
+
                 <strong>{{ this.messageErrors }}</strong>
+              </div>
+
+
+
+              <div class="alert alert-success alert-dismissible" v-if="this.showSuccessAlert">
+                <a
+                  href="#"
+                  class="close"
+                  data-dismiss="alert"
+                  aria-label="close"
+                  @click.prevent="this.showSuccessAlert = !this.showSuccessAlert"
+                  >&times;</a
+                >
+
+                <strong>{{ this.messageSuccess }}</strong>
               </div>
 
               <div class="form-item">
@@ -31,6 +47,7 @@
                   type="text"
                   placeholder="Enter your email"
                   v-model="form.email"
+                  v-bind:disabled="this.disableTextInputs"
                 />
               </div>
 
@@ -40,6 +57,7 @@
                   type="password"
                   placeholder="Enter your password"
                   v-model="form.password"
+                  v-bind:disabled="this.disableTextInputs"
                 />
               </div>
 
@@ -55,6 +73,7 @@
                   type="button"
                   class="crumina-button button--primary button--l w-100"
                   @click.prevent="this.LoginProcessStarted()"
+                  v-bind:disabled="this.disableTextInputs"
                 >
                   Sign In
                 </button>
@@ -77,12 +96,21 @@ export default {
 
   data() {
     return {
+
       form: {
         email: null,
         password: null,
       },
+
+
+      disableTextInputs: false,
+
+      showSuccessAlert: false,
+      messageSuccess: null,
+
       showErrorsAlert: false,
       messageErrors: null,
+
     };
   },
 
@@ -91,12 +119,22 @@ export default {
       axios
         .post(this.loginRoute, this.form)
         .then((response) => {
-          console.log(response.data);
+
+            this.disableTextInputs = true;
+            this.showErrorsAlert  = false;
+            this.showSuccessAlert = true;
+            this.messageSuccess   = response.data[0];
+
+
+            /*
+            setInterval(() => {
+                window.location.href = '/';
+            }, 2500); */
+
         })
         .catch((error) => {
             this.showErrorsAlert = true;
             this.messageErrors = error.response.data.message;
-          console.log("Error: " + error.response.data.message);
         });
     },
   },

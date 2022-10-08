@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\Auth\LoginRequest;
 
 class AuthController extends Controller
 {
@@ -21,7 +22,12 @@ class AuthController extends Controller
 
 
     public function UserLogin(LoginRequest $request){
-        return response()->json($request->all(), 200);
+
+        if(Auth::attempt($request->all())){
+            return response()->json(['You have been logged in!'], 200);
+        }
+        return response()->json(['message'=>'Email or Password incorrect!'], 401);
+
     }
 
 
