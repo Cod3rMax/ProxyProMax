@@ -36,7 +36,7 @@ class AuthController extends Controller
 
     public function UserRegistration(RegistrationRequest $request){
 
-
+        // Create a new user registration
         $user = User::create($request->merge(
             [
                 'password'=>bcrypt($request->get('password')),
@@ -47,13 +47,16 @@ class AuthController extends Controller
 
             if($user){
 
+                //Generate user verification code and store it
                 UserEmailConfirmation::create([
                     'user_id' => $user->id,
                     'confirmation_code' => md5(bcrypt(openssl_random_pseudo_bytes(500).md5(bcrypt(md5(openssl_random_pseudo_bytes(500))))))
                 ]);
 
-
+                //Login the new user automatically
                 Auth::login($user);
+
+                //Send message to the user that he is registered
                 return response()->json(['You have been registered!'], 200);
             }
 

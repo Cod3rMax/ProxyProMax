@@ -40,3 +40,17 @@ Route::get('dbdelete', function(){
 \App\Models\User::truncate();
 \App\Models\UserEmailConfirmation::truncate();
 });
+
+
+Route::get('testrelation', function(){
+
+    if(Auth::check()){
+        echo "User is logged in! with id: ".Auth::user()->id." <br>";
+        echo "<br> Checking relationSHIP: <br>";
+
+        return \App\Models\User::find(Auth::user()->id)->with('UserConfirmation')->get();
+
+
+    }
+    return "not logged";
+});

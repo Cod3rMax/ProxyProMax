@@ -11,5 +11,4 @@ class UserEmailConfirmation extends Model
 
     protected $guarded = [];
 
-
 }
