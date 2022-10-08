@@ -34,3 +34,9 @@ Route::get('testlogin', function(){
     }
     return "not logged";
 });
+
+
+Route::get('dbdelete', function(){
+\App\Models\User::truncate();
+\App\Models\UserEmailConfirmation::truncate();
+});

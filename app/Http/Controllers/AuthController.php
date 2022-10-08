@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegistrationRequest;
 use App\Models\User;
+use App\Models\UserEmailConfirmation;
 
 class AuthController extends Controller
 {
@@ -43,21 +44,20 @@ class AuthController extends Controller
             ]
             )->toArray());
 
+
             if($user){
+
+                UserEmailConfirmation::create([
+                    'user_id' => $user->id,
+                    'confirmation_code' => md5(bcrypt(openssl_random_pseudo_bytes(500).md5(bcrypt(md5(openssl_random_pseudo_bytes(500))))))
+                ]);
+
+
                 Auth::login($user);
                 return response()->json(['You have been registered!'], 200);
             }
 
             return response()->json(['message' => 'Can not register the user'], 422);
-
-
-/*         return response()->json(
-            $request->merge(
-                [
-                    'password'=>bcrypt($request->get('password')),
-                    'password_confirmation'=>bcrypt($request->get('password_confirmation')),
-                ]
-        ), 200); */
 
     }
 
