@@ -2,7 +2,7 @@
 
 
 <div id="app">
-    <registration-component></registration-component>
+    <registration-component :registration-route="'{{ route('UserRegistrationAPI') }}'"></registration-component>
 </div>
 
 

@@ -13,7 +13,45 @@
               <a href="/">
                 <img loading="lazy" src="/img/logo.png" alt="logo" />
               </a>
-              <br><br>
+              <br /><br />
+
+
+              <div
+                class="alert alert-danger alert-dismissible"
+                v-if="this.showErrorsAlert"
+              >
+                <a
+                  href="#"
+                  class="close"
+                  data-dismiss="alert"
+                  aria-label="close"
+                  @click.prevent="this.showErrorsAlert = !this.showErrorsAlert"
+                  >&times;</a
+                >
+
+                <strong>{{ this.messageErrors }}</strong>
+              </div>
+
+
+
+              <div
+                class="alert alert-success alert-dismissible"
+                v-if="this.showSuccessAlert"
+              >
+                <a
+                  href="#"
+                  class="close"
+                  data-dismiss="alert"
+                  aria-label="close"
+                  @click.prevent="
+                    this.showSuccessAlert = !this.showSuccessAlert
+                  "
+                  >&times;</a
+                >
+
+                <strong>{{ this.messageSuccess }}</strong>
+              </div>
+
 
               <div class="form-item">
                 <input
@@ -78,17 +116,29 @@
 
 
 <script>
-import axios from 'axios';
-export default {
 
+export default {
+    props: ["registrationRoute"],
     data(){
+
         return {
+
+
             form: {
                 name: null,
                 email: null,
                 password: null,
                 password_confirmation: null,
-            }
+            },
+
+            disableTextInputs: false,
+
+            showSuccessAlert: false,
+            messageSuccess: null,
+
+            showErrorsAlert: false,
+            messageErrors: null,
+
         }
     },
 
@@ -96,17 +146,21 @@ export default {
     methods: {
 
         RegistrationProcessStarted(){
-            axios.post('/api/Auth/Registration', this.form)
+            axios.post(this.registrationRoute, this.form)
             .then(response => {
                 console.log(response.data);
+                this.disableTextInputs = true;
+                this.showErrorsAlert = false;
+                this.showSuccessAlert = true;
+                this.messageSuccess = response.data[0];
             })
             .catch(error => {
-                console.log(error.response.data.message)
+                this.showErrorsAlert = true;
+                this.messageErrors = error.response.data.message;
             })
         }
 
-    }
-
+    },
 
 
 
