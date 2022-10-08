@@ -59,6 +59,7 @@
                   type="text"
                   placeholder="Enter your full name"
                   v-model="form.name"
+                  v-bind:disabled="this.disableTextInputs"
                 />
               </div>
 
@@ -68,6 +69,7 @@
                   type="text"
                   placeholder="Enter your email"
                   v-model="form.email"
+                  v-bind:disabled="this.disableTextInputs"
                 />
               </div>
 
@@ -77,6 +79,7 @@
                   type="password"
                   placeholder="Enter your password"
                   v-model="form.password"
+                  v-bind:disabled="this.disableTextInputs"
                 />
               </div>
 
@@ -86,6 +89,7 @@
                   type="password"
                   placeholder="Confirm your password"
                   v-model="form.password_confirmation"
+                  v-bind:disabled="this.disableTextInputs"
                 />
               </div>
 
@@ -153,6 +157,11 @@ export default {
                 this.showErrorsAlert = false;
                 this.showSuccessAlert = true;
                 this.messageSuccess = response.data[0];
+
+                setInterval(() => {
+                window.location.href = '/';
+            }, 2500);
+
             })
             .catch(error => {
                 this.showErrorsAlert = true;
