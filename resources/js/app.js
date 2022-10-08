@@ -18,8 +18,8 @@ app.component('newsletter-component', NewsLetterComponent);
 import RegistrationComponent from "./components/Auth/RegistrationComponent.vue";
 app.component('registration-component', RegistrationComponent);
 
-
-
+import LoginComponent from "./components/Auth/LoginComponent.vue";
+app.component('login-component', LoginComponent);
 
 
 

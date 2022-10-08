@@ -19,6 +19,7 @@ Route::get('/',[MainPageController::class,'index'])->name('MainPage');
 
 
 Route::get('Auth/Registration',[AuthController::class,'index'])->name('UserRegistration');
+Route::get('Auth/login',[AuthController::class,'login'])->name('UserLogin');
 
 
 
