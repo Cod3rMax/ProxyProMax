@@ -34,7 +34,14 @@ class AuthController extends Controller
 
     public function UserRegistration(RegistrationRequest $request){
 
-        return response()->json($request->all(), 200);
+
+        return response()->json(
+            $request->merge(
+                [
+                    'password'=>bcrypt($request->get('password')),
+                    'password_confirmation'=>bcrypt($request->get('password_confirmation')),
+                ]
+        ), 200);
 
     }
 
