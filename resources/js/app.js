@@ -21,6 +21,9 @@ app.component('registration-component', RegistrationComponent);
 import LoginComponent from "./components/Auth/LoginComponent.vue";
 app.component('login-component', LoginComponent);
 
+import UserConfirmationComponent from "./components/Auth/UserConfirmationComponent.vue";
+app.component('userconfirmation-component', UserConfirmationComponent);
+
 
 
 

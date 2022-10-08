@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\UserEmailConfirmationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,44 @@ Route::get('/',[MainPageController::class,'index'])->name('MainPage');
 
 Route::get('Auth/Registration',[AuthController::class,'index'])->name('UserRegistration');
 Route::get('Auth/login',[AuthController::class,'login'])->name('UserLogin');
+Route::get('Auth/UserConfirmation',[UserEmailConfirmationController::class,'index'])->name('UserConfirmation');
 
 
 
 Route::get('PrivacyPolicy', function(){ return view('PrivacyPolicy'); })->name('PrivacyPolicy');
 Route::get('Terms', function(){ return view('Terms'); })->name('Terms');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Route::get('testlogin', function(){
