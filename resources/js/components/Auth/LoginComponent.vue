@@ -116,6 +116,7 @@ export default {
 
   methods: {
     LoginProcessStarted() {
+        axios.get('/sanctum/csrf-cookie').then(response => {
       axios
         .post(this.loginRoute, this.form)
         .then((response) => {
@@ -124,8 +125,6 @@ export default {
             this.showErrorsAlert  = false;
             this.showSuccessAlert = true;
             this.messageSuccess   = response.data[0];
-
-
             /*
             setInterval(() => {
                 window.location.href = '/';
@@ -136,6 +135,8 @@ export default {
             this.showErrorsAlert = true;
             this.messageErrors = error.response.data.message;
         });
+    });
+
     },
   },
 };
