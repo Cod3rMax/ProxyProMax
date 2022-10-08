@@ -13,7 +13,10 @@
               </a>
               <br /><br />
 
-              <div class="alert alert-danger alert-dismissible" v-if="this.showErrorsAlert">
+              <div
+                class="alert alert-danger alert-dismissible"
+                v-if="this.showErrorsAlert"
+              >
                 <a
                   href="#"
                   class="close"
@@ -26,15 +29,18 @@
                 <strong>{{ this.messageErrors }}</strong>
               </div>
 
-
-
-              <div class="alert alert-success alert-dismissible" v-if="this.showSuccessAlert">
+              <div
+                class="alert alert-success alert-dismissible"
+                v-if="this.showSuccessAlert"
+              >
                 <a
                   href="#"
                   class="close"
                   data-dismiss="alert"
                   aria-label="close"
-                  @click.prevent="this.showSuccessAlert = !this.showSuccessAlert"
+                  @click.prevent="
+                    this.showSuccessAlert = !this.showSuccessAlert
+                  "
                   >&times;</a
                 >
 
@@ -96,12 +102,10 @@ export default {
 
   data() {
     return {
-
       form: {
         email: null,
         password: null,
       },
-
 
       disableTextInputs: false,
 
@@ -110,33 +114,30 @@ export default {
 
       showErrorsAlert: false,
       messageErrors: null,
-
     };
   },
 
   methods: {
     LoginProcessStarted() {
-        axios.get('/sanctum/csrf-cookie').then(response => {
-      axios
-        .post(this.loginRoute, this.form)
-        .then((response) => {
+      axios.get("/sanctum/csrf-cookie").then((response) => {
+        axios.post(this.loginRoute, this.form)
+             .then((response) => {
 
-            this.disableTextInputs = true;
-            this.showErrorsAlert  = false;
-            this.showSuccessAlert = true;
-            this.messageSuccess   = response.data[0];
-            /*
+                this.disableTextInputs = true;
+                this.showErrorsAlert = false;
+                this.showSuccessAlert = true;
+                this.messageSuccess = response.data[0];
+
             setInterval(() => {
                 window.location.href = '/';
-            }, 2500); */
+            }, 2500);
 
-        })
-        .catch((error) => {
+          })
+          .catch((error) => {
             this.showErrorsAlert = true;
             this.messageErrors = error.response.data.message;
-        });
-    });
-
+          });
+      });
     },
   },
 };

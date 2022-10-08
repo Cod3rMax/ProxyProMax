@@ -20,6 +20,7 @@
                   class="input--dark input--squared"
                   type="text"
                   placeholder="Enter your full name"
+                  v-model="form.name"
                 />
               </div>
 
@@ -28,6 +29,7 @@
                   class="input--dark input--squared"
                   type="text"
                   placeholder="Enter your email"
+                  v-model="form.email"
                 />
               </div>
 
@@ -36,6 +38,7 @@
                   class="input--dark input--squared"
                   type="password"
                   placeholder="Enter your password"
+                  v-model="form.password"
                 />
               </div>
 
@@ -44,6 +47,7 @@
                   class="input--dark input--squared"
                   type="password"
                   placeholder="Confirm your password"
+                  v-model="form.password_confirmation"
                 />
               </div>
 
@@ -58,6 +62,7 @@
                 <button
                   type="button"
                   class="crumina-button button--primary button--l w-100"
+                  @click.prevent="this.RegistrationProcessStarted()"
                 >
                   Sign Up
                 </button>
@@ -73,6 +78,38 @@
 
 
 <script>
-export default {};
+import axios from 'axios';
+export default {
+
+    data(){
+        return {
+            form: {
+                name: null,
+                email: null,
+                password: null,
+                password_confirmation: null,
+            }
+        }
+    },
+
+
+    methods: {
+
+        RegistrationProcessStarted(){
+            axios.post('/api/Auth/Registration', this.form)
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error.response.data.message)
+            })
+        }
+
+    }
+
+
+
+
+};
 </script>
 

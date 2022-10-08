@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\RegistrationRequest;
 
 class AuthController extends Controller
 {
@@ -31,5 +32,10 @@ class AuthController extends Controller
     }
 
 
+    public function UserRegistration(RegistrationRequest $request){
+
+        return response()->json($request->all(), 200);
+
+    }
 
 }
