@@ -2,7 +2,7 @@
 
 
 <div id="app">
-    <login-component></login-component>
+    <login-component :login-route="'{{ Route('UserLoginAPI') }}'"></login-component>
 </div>
 
 

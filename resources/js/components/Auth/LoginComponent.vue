@@ -21,6 +21,7 @@
                     class="input--dark input--squared"
                     type="text"
                     placeholder="Enter your email"
+                    v-model="form.email"
                   />
                 </div>
 
@@ -29,6 +30,7 @@
                     class="input--dark input--squared"
                     type="password"
                     placeholder="Enter your password"
+                    v-model="form.password"
                   />
                 </div>
 
@@ -43,6 +45,7 @@
                   <button
                     type="button"
                     class="crumina-button button--primary button--l w-100"
+                    @click.prevent="this.LoginProcessStarted()"
                   >
                     Sign In
                   </button>
@@ -58,6 +61,45 @@
 
 
   <script>
-  export default {};
+import axios from 'axios';
+
+  export default {
+
+    props: ['loginRoute'],
+
+    data(){
+        return {
+
+            form: {
+                email: null,
+                password: null,
+            }
+
+        }
+    },
+
+
+
+
+    methods: {
+
+        LoginProcessStarted(){
+
+             axios.post(this.loginRoute, this.form)
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.log("Error: " + error)
+            })
+
+        }
+
+    },
+
+
+
+
+  };
   </script>
 

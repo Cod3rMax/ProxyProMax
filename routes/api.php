@@ -21,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('Subscribe', [\App\Http\Controllers\NewsLetterController::class, 'store'])->name('NewsLetterSubscribe');
+
+
+Route::post('Auth/Login', [\App\Http\Controllers\AuthController::class,'UserLogin'])->name('UserLoginAPI');
