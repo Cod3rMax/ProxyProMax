@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('user_email_confirmations', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id')->unique();
+            $table->string('confirmation_code');
+            $table->boolean('confirmed')->nullable()->default(false);
             $table->timestamps();
         });
     }

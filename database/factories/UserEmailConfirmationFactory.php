@@ -17,7 +17,9 @@ class UserEmailConfirmationFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => $this->faker->unique()->numberBetween(1,50),
+            'confirmation_code' => md5(bcrypt(openssl_random_pseudo_bytes(500).md5(bcrypt(md5(openssl_random_pseudo_bytes(500)))))),
+            'confirmed' => rand(true,false),
         ];
     }
 }
