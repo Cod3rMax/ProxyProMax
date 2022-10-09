@@ -27,7 +27,7 @@ class AuthController extends Controller
     public function UserLogin(LoginRequest $request){
 
         if(Auth::attempt($request->all())){
-            return response()->json(['You have been logged in!'], 200);
+           return response()->json(['You have been logged in!',Auth::user()->UserConfirmation->confirmed], 200);
         }
         return response()->json(['message'=>'Email or Password incorrect!'], 401);
 

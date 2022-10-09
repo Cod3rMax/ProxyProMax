@@ -100,7 +100,7 @@
 import axios from "axios";
 
 export default {
-  props: ["loginRoute","registrationLink"],
+  props: ["loginRoute","registrationLink","confirmationLink"],
 
   data() {
     return {
@@ -120,6 +120,8 @@ export default {
   },
 
   methods: {
+
+
     LoginProcessStarted() {
       axios.get("/sanctum/csrf-cookie").then((response) => {
         axios.post(this.loginRoute, this.form)
@@ -130,9 +132,17 @@ export default {
                 this.showSuccessAlert = true;
                 this.messageSuccess = response.data[0];
 
-            setInterval(() => {
+
+                if(!response.data[1]){
+                    setInterval(() => {
+                window.location.href = this.confirmationLink;
+            }, 1800);
+                }
+                else {
+                    setInterval(() => {
                 window.location.href = '/';
             }, 2500);
+                }
 
           })
           .catch((error) => {
@@ -141,7 +151,13 @@ export default {
           });
       });
     },
+
+
+
+
   },
+
+
 
 };
 </script>
