@@ -105,6 +105,7 @@
                   type="button"
                   class="crumina-button button--primary button--l w-100"
                   @click.prevent="this.RegistrationProcessStarted()"
+                  v-bind:disabled="this.disableTextInputs"
                 >
                   Sign Up
                 </button>
@@ -122,7 +123,7 @@
 <script>
 
 export default {
-    props: ["registrationRoute"],
+    props: ["registrationRoute","confirmationRoute"],
     data(){
 
         return {
@@ -159,7 +160,7 @@ export default {
                 this.messageSuccess = response.data[0];
 
                 setInterval(() => {
-                window.location.href = '/';
+                window.location.href = this.confirmationRoute;
             }, 2500);
 
             })
@@ -170,7 +171,6 @@ export default {
         }
 
     },
-
 
 
 };

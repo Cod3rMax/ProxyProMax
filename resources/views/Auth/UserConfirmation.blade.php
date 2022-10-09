@@ -2,7 +2,7 @@
 
 
 <div id="app">
-    <userconfirmation-component></user-confirmation-component>
+    <userconfirmation-component :confirmation-route="'{{ route('UserConfirmationAPI') }}'"></user-confirmation-component>
 </div>
 
 

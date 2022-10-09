@@ -15,23 +15,48 @@
 
               <div
                 class="alert alert-danger alert-dismissible"
+                v-if="this.showErrorsAlert"
               >
                 <a
                   href="#"
                   class="close"
                   data-dismiss="alert"
                   aria-label="close"
+                  @click.prevent="this.showErrorsAlert = !this.showErrorsAlert"
                   >&times;</a
                 >
 
-                <strong>zefzef</strong>
+                <strong>{{ this.messageErrors }}</strong>
               </div>
+
+
+
+              <div
+                class="alert alert-success alert-dismissible"
+                v-if="this.showSuccessAlert"
+              >
+                <a
+                  href="#"
+                  class="close"
+                  data-dismiss="alert"
+                  aria-label="close"
+                  @click.prevent="
+                    this.showSuccessAlert = !this.showSuccessAlert
+                  "
+                  >&times;</a
+                >
+
+                <strong>{{ this.messageSuccess }}</strong>
+              </div>
+
 
               <div class="form-item">
                 <input
                   class="input--dark input--squared"
                   type="text"
                   placeholder="Enter your confirmation code...."
+                  v-model="form.confirmation_code"
+                  v-bind:disabled="this.disableTextInputs"
                 />
               </div>
 
@@ -48,6 +73,8 @@
                 <button
                   type="button"
                   class="crumina-button button--primary button--l w-100"
+                  @click.prevent="this.ConfirmationProcessStarted()"
+                  v-bind:disabled="this.disableTextInputs"
                 >
                   Confirm account
                 </button>
@@ -63,6 +90,52 @@
 
 
     <script>
-export default {};
+export default {
+
+    props: ["confirmationRoute"],
+
+    data(){
+        return {
+            form: {
+                confirmation_code: null,
+            },
+
+            disableTextInputs: false,
+
+            showSuccessAlert: false,
+            messageSuccess: null,
+
+            showErrorsAlert: false,
+            messageErrors: null,
+        }
+    },
+
+
+    methods: {
+
+        ConfirmationProcessStarted(){
+            axios.post(this.confirmationRoute, this.form)
+            .then(response => {
+                console.log(response.data);
+                this.disableTextInputs = true;
+                this.showErrorsAlert = false;
+                this.showSuccessAlert = true;
+                this.messageSuccess = response.data[0];
+
+                setInterval(() => {
+                window.location.href = '/';
+            }, 2500);
+
+            })
+            .catch(error => {
+                this.showErrorsAlert = true;
+                this.messageErrors = error.response.data.message;
+            })
+        }
+
+    },
+
+
+};
 </script>
 

@@ -69,6 +69,9 @@ Route::get('testlogin', function(){
     return "not logged";
 });
 
+Route::get('testlogout', function(){
+Auth::logout();
+});
 
 Route::get('dbdelete', function(){
 \App\Models\User::truncate();
