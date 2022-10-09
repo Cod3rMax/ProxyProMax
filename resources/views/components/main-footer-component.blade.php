@@ -87,7 +87,7 @@
 						</h5>
 						<ul>
 							<li>
-								<a href="09_about.html">
+								<a href="{{ Route('Terms') }}">
 									Terms & Conditions
 									<svg class="crumina-icon">
 										<use xlink:href="#icon-triangle-arrow"></use>
@@ -95,7 +95,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="10_knowledge_base.html">
+								<a href="{{ Route('PrivacyPolicy') }}">
 									Privacy Policy
 									<svg class="crumina-icon">
 										<use xlink:href="#icon-triangle-arrow"></use>

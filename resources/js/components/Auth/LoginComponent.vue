@@ -69,9 +69,11 @@
 
               <div class="form-item">
                 <div class="remember-wrapper text-white">
-                  <div class="checkbox">
-                    <label>Not registered? Create new account</label>
-                  </div>
+                    <a v-bind:href="this.registrationLink">
+                    <div class="checkbox">
+                        <label>Not registered? Create new account</label>
+                    </div>
+                    </a>
                 </div>
               </div>
               <div class="form-item">
@@ -98,7 +100,7 @@
 import axios from "axios";
 
 export default {
-  props: ["loginRoute"],
+  props: ["loginRoute","registrationLink"],
 
   data() {
     return {
@@ -140,6 +142,7 @@ export default {
       });
     },
   },
+
 };
 </script>
 

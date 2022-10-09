@@ -31,7 +31,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul class="breadcrumbs">
                         <li class="breadcrumbs-item">
-                            <a href="index.html">Home</a>
+                            <a href="{{ Route('MainPage') }}">Home</a>
                         </li>
                         <li class="breadcrumbs-item active">
                             <span>Privacy Policy</span>

@@ -26,7 +26,7 @@
 
 
 				<li class="navigation-item is-active">
-                    <a class="navigation-link" href="17_contacts.html">Home</a>
+                    <a class="navigation-link" href="{{ Route('MainPage') }}">Home</a>
 				</li>
 
 
@@ -105,7 +105,7 @@
 
 			</ul>
 			<div class="navigation-body-section navigation-additional-menu">
-				<a href="#" class="crumina-button button--green button--xs">Login</a>
+				<a href="{{ Route('UserLogin') }}" class="crumina-button button--green button--xs">Login</a>
 			</div>
 		</div>
 	</div>

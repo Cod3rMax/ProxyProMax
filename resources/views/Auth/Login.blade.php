@@ -2,7 +2,7 @@
 
 
 <div id="app">
-    <login-component :login-route="'{{ Route('UserLoginAPI') }}'"></login-component>
+    <login-component :login-route="'{{ Route('UserLoginAPI') }}'" :registration-link="'{{ Route('UserRegistration') }}'"></login-component>
 </div>
 
 
