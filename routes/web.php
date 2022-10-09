@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\ProxiesController;
 use App\Http\Controllers\UserEmailConfirmationController;
 
 /*
@@ -19,6 +20,9 @@ use App\Http\Controllers\UserEmailConfirmationController;
 
 Route::get('/',[MainPageController::class,'index'])->name('MainPage');
 
+
+//Registration system routes
+
 Route::middleware('AuthenticatedUsersMiddleware')->group(function () {
 
     Route::get('Auth/Registration',[AuthController::class,'index'])->name('UserRegistration');
@@ -29,29 +33,30 @@ Route::middleware('UsersConfirmationMiddleware')->get('Auth/UserConfirmation',[U
 Route::get('Auth/Logout', function(){ Auth::logout(); return redirect()->back(); })->name('UserLogout');
 
 
+
+
+
+
+
+
+
+//Proxies routes to be displayed to the users
+
+Route::get('AllProxies',[ProxiesController::class,'index'])->name('AllProxies');
+
+
+
+
+
+
+
+
+
+
+
+
 Route::get('PrivacyPolicy', function(){ return view('PrivacyPolicy'); })->name('PrivacyPolicy');
 Route::get('Terms', function(){ return view('Terms'); })->name('Terms');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

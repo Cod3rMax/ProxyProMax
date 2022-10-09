@@ -25,6 +25,10 @@ import UserConfirmationComponent from "./components/Auth/UserConfirmationCompone
 app.component('userconfirmation-component', UserConfirmationComponent);
 
 
+import AllProxiesComponent from "./components/ProxyList/AllProxiesComponent.vue";
+app.component('allproxies-component', AllProxiesComponent);
+
+
 
 
 const options = {
