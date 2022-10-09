@@ -95,10 +95,12 @@
 
               <div class="form-item">
                 <div class="remember-wrapper text-white">
-                  <div class="checkbox">
-                    <label>Go back to login</label>
-                  </div>
-                </div>
+                    <a v-bind:href="this.loginLink">
+                        <div class="checkbox">
+                            <label>Go back to login</label>
+                        </div>
+                    </a>
+                    </div>
               </div>
               <div class="form-item">
                 <button
@@ -123,7 +125,7 @@
 <script>
 
 export default {
-    props: ["registrationRoute","confirmationRoute"],
+    props: ["registrationRoute","confirmationRoute","loginLink"],
     data(){
 
         return {
@@ -171,6 +173,7 @@ export default {
         }
 
     },
+
 
 
 };
