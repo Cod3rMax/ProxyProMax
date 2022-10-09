@@ -106,10 +106,10 @@
 			</ul>
 			<div class="navigation-body-section navigation-additional-menu">
 
-                @if(Auth::check())
-				<a href="{{ Route('UserLogin') }}" class="crumina-button button--uppercase button--yellow button--xs">Logout</a>
-                @elseif (Auth::user()->UserConfirmation->confirmed)
-                <a href="{{ Route('UserLogin') }}" class="crumina-button button--uppercase button--orange button--xs">Verify</a>
+                @if(Auth::check() && Auth::user()->UserConfirmation->confirmed)
+				<a href="{{ Route('UserLogout') }}" class="crumina-button button--uppercase button--yellow button--xs">Logout</a>
+                @elseif (Auth::check() && !Auth::user()->UserConfirmation->confirmed)
+                <a href="{{ Route('UserConfirmation') }}" class="crumina-button button--uppercase button--orange button--xs">Verify</a>
                 @else
                 <a href="{{ Route('UserLogin') }}" class="crumina-button button--uppercase button--green button--xs">Login</a>
                 @endif
