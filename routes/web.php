@@ -26,11 +26,11 @@ Route::middleware('AuthenticatedUsersMiddleware')->group(function () {
 
 });
 Route::middleware('UsersConfirmationMiddleware')->get('Auth/UserConfirmation',[UserEmailConfirmationController::class,'index'])->name('UserConfirmation');
+Route::get('Auth/Logout', function(){ Auth::logout(); return redirect()->back(); })->name('UserLogout');
 
 
 Route::get('PrivacyPolicy', function(){ return view('PrivacyPolicy'); })->name('PrivacyPolicy');
 Route::get('Terms', function(){ return view('Terms'); })->name('Terms');
-
 
 
 
