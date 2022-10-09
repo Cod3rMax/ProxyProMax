@@ -37,6 +37,17 @@
                         </table>
                     </div>
                     </div>
+
+                    <div class="d-flex justify-content-center small-section-padding font-weight-bold">
+                    You are on page: 1
+                </div>
+
+                <div class="universal-btn-wrapper d-flex justify-content-center">
+                    <button  class="crumina-button button--yellow button--l">Previous Page</button>
+
+                    <button  class="crumina-button button--yellow button--l">Next Page</button>
+                </div>
+
                 </section>
 </template>
 
