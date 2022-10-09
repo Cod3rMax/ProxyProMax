@@ -23,6 +23,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('Subscribe', [\App\Http\Controllers\NewsLetterController::class, 'store'])->name('NewsLetterSubscribe');
 
 
-Route::post('Auth/Login', [\App\Http\Controllers\AuthController::class,'UserLogin'])->name('UserLoginAPI');
-Route::post('Auth/Registration', [\App\Http\Controllers\AuthController::class,'UserRegistration'])->name('UserRegistrationAPI');
-Route::post('Auth/UserConfirmation',[\App\Http\Controllers\UserEmailConfirmationController::class,'confirm'])->name('UserConfirmationAPI');
+Route::middleware('AuthenticatedUsersMiddleware')->group(function () {
+
+    Route::post('Auth/Login', [\App\Http\Controllers\AuthController::class, 'UserLogin'])->name('UserLoginAPI');
+    Route::post('Auth/Registration', [\App\Http\Controllers\AuthController::class, 'UserRegistration'])->name('UserRegistrationAPI');
+
+});
+
+
+
+Route::middleware('UsersConfirmationMiddleware')->post('Auth/UserConfirmation', [\App\Http\Controllers\UserEmailConfirmationController::class, 'confirm'])->name('UserConfirmationAPI');

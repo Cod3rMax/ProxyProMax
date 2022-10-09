@@ -19,11 +19,13 @@ use App\Http\Controllers\UserEmailConfirmationController;
 
 Route::get('/',[MainPageController::class,'index'])->name('MainPage');
 
+Route::middleware('AuthenticatedUsersMiddleware')->group(function () {
 
-Route::get('Auth/Registration',[AuthController::class,'index'])->name('UserRegistration');
-Route::get('Auth/login',[AuthController::class,'login'])->name('UserLogin');
-Route::get('Auth/UserConfirmation',[UserEmailConfirmationController::class,'index'])->name('UserConfirmation');
+    Route::get('Auth/Registration',[AuthController::class,'index'])->name('UserRegistration');
+    Route::get('Auth/login',[AuthController::class,'login'])->name('UserLogin');
 
+});
+Route::middleware('UsersConfirmationMiddleware')->get('Auth/UserConfirmation',[UserEmailConfirmationController::class,'index'])->name('UserConfirmation');
 
 
 Route::get('PrivacyPolicy', function(){ return view('PrivacyPolicy'); })->name('PrivacyPolicy');
