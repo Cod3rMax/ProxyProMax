@@ -30,7 +30,7 @@
                                     <td>{{ proxy['Protocol'] }}</td>
                                     <td><span v-bind:class="[proxy['Blacklisted'] ? 'label-category label--red' : 'label-category  label--green']">{{ proxy['Blacklisted'] ? 'BLACKLISTED' : 'CLEAN' }}</span></td>
                                     <td>{{ proxy['created_at'] }}</td>
-                                    <td><button class="crumina-button button--yellow">Copy</button></td>
+                                    <td><button class="crumina-button button--yellow" @click.prevent="this.CopyToClipboard(proxy['ProxyIP'])">Copy</button></td>
                                 </tr>
                             </tbody>
 
@@ -53,7 +53,7 @@
 
 
 <script>
-import axios from 'axios';
+// Ba9i ndir el copy button!
 export default {
 
     props: ["allproxiesRoute"],
@@ -96,9 +96,17 @@ export default {
 
         },
 
+
+        CopyToClipboard(proxy){
+            console.log(proxy);
+        },
+
+
         NextPage(){
             this.page++;
         },
+
+
         PrevPage(){
             this.page--;
         },
