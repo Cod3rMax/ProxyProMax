@@ -34,7 +34,7 @@
 
 
          <div id="app">
-            <allproxies-component></allproxies-component>
+            <allproxies-component :allproxies-route="'{{ Route('AllProxiesAPI') }}'"></allproxies-component>
          </div>
 
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProxiesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,3 +34,10 @@ Route::middleware('AuthenticatedUsersMiddleware')->group(function () {
 
 
 Route::middleware('UsersConfirmationMiddleware')->post('Auth/UserConfirmation', [\App\Http\Controllers\UserEmailConfirmationController::class, 'confirm'])->name('UserConfirmationAPI');
+
+
+
+// Proxy List pages api
+
+
+Route::get('ProxyList/AllProxies',[ProxiesController::class,'GetAllProxies'])->name('AllProxiesAPI');

@@ -23,13 +23,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="font-weight-bold align-center">
-                                    <th scope="row">zefzef</th>
-                                    <td>zefzef</td>
-                                    <td>zefzef</td>
-                                    <td>zefzef</td>
-                                    <td><span class="label--green">zefzef</span></td>
-                                    <td>zefzef</td>
+                                <tr class="font-weight-bold align-center" v-for="(proxy, key) in this.proxies" :key="key">
+                                    <th scope="row">{{ key + 1 }}</th>
+                                    <td>{{ proxy['ProxyIP'] }}</td>
+                                    <td>{{ proxy['Country'] }}</td>
+                                    <td>{{ proxy['Protocol'] }}</td>
+                                    <td><span v-bind:class="[proxy['Blacklisted'] ? 'label-category label--red' : 'label-category  label--green']">{{ proxy['Blacklisted'] ? 'BLACKLISTED' : 'CLEAN' }}</span></td>
+                                    <td>{{ proxy['created_at'] }}</td>
                                     <td><button class="crumina-button button--yellow">Copy</button></td>
                                 </tr>
                             </tbody>
@@ -54,7 +54,43 @@
 
 
 <script>
+import axios from 'axios';
 export default {
+
+    props: ["allproxiesRoute"],
+
+
+    data(){
+
+        return {
+
+            proxies: null,
+
+
+        }
+
+    },
+
+
+    methods: {
+
+        GetProxyListFunction(){
+            axios.get(this.allproxiesRoute)
+            .then(response => {
+                console.log(response.data);
+                this.proxies = response.data;
+            })
+            .catch(error =>{
+                console.log("Error: " + error.response.data.message);
+            })
+
+        }
+
+    },
+
+mounted(){
+    this.GetProxyListFunction();
+}
 
 }
 </script>
