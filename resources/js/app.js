@@ -10,6 +10,8 @@ import { createApp } from 'vue';
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 
+
+
 const app = createApp({});
 
 import NewsLetterComponent from './components/NewsLetterComponent.vue';
@@ -27,8 +29,6 @@ app.component('userconfirmation-component', UserConfirmationComponent);
 
 import AllProxiesComponent from "./components/ProxyList/AllProxiesComponent.vue";
 app.component('allproxies-component', AllProxiesComponent);
-
-
 
 
 const options = {

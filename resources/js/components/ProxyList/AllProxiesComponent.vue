@@ -8,6 +8,9 @@
                         </div>
                 </div>
 
+                <button class="btn" data-clipboard-text="Just">
+    Copy to clipboard
+</button>
 
                     <div>
                         <table class="table table-responsive-lg table--style3 align-center">
@@ -30,7 +33,7 @@
                                     <td>{{ proxy['Protocol'] }}</td>
                                     <td><span v-bind:class="[proxy['Blacklisted'] ? 'label-category label--red' : 'label-category  label--green']">{{ proxy['Blacklisted'] ? 'BLACKLISTED' : 'CLEAN' }}</span></td>
                                     <td>{{ proxy['created_at'] }}</td>
-                                    <td><button class="crumina-button button--yellow" @click.prevent="this.CopyToClipboard(proxy['ProxyIP'])">Copy</button></td>
+                                    <td><button v-bind:data-clipboard-text="proxy['ProxyIP']"  class="btn crumina-button button--yellow" @click.prevent="this.CopyToClipboard()">Copy</button></td>
                                 </tr>
                             </tbody>
 
@@ -53,7 +56,8 @@
 
 
 <script>
-// Ba9i ndir el copy button!
+import ClipboardJS from 'clipboard';
+var clipboard = new ClipboardJS('.btn');
 export default {
 
     props: ["allproxiesRoute"],
