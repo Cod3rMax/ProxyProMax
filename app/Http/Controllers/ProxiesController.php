@@ -13,7 +13,7 @@ class ProxiesController extends Controller
 
 
     public function GetAllProxies(){
-        return response()->json(Proxies::all(),200);
+        return response()->json(Proxies::paginate(10),200);
     }
 
 

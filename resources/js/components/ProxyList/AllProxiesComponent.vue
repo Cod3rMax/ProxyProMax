@@ -39,13 +39,12 @@
                     </div>
 
                     <div class="d-flex justify-content-center small-section-padding font-weight-bold">
-                    You are on page: 1
+                    You are on page: {{ this.page }}
                 </div>
 
                 <div class="universal-btn-wrapper d-flex justify-content-center">
-                    <button  class="crumina-button button--yellow button--l">Previous Page</button>
-
-                    <button  class="crumina-button button--yellow button--l">Next Page</button>
+                    <button v-bind:disabled="this.disablePrevPageButton" class="crumina-button button--yellow button--l" @click.prevent="this.PrevPage()">Previous Page</button>
+                    <button v-bind:disabled="this.disableNextPageButton" class="crumina-button button--yellow button--l" @click.prevent="this.NextPage()">Next Page</button>
                 </div>
 
                 </section>
@@ -66,7 +65,10 @@ export default {
 
             proxies: null,
 
-
+            page: 1,
+            totalPages: null,
+            disableNextPageButton: false,
+            disablePrevPageButton: true,
         }
 
     },
@@ -75,17 +77,39 @@ export default {
     methods: {
 
         GetProxyListFunction(){
-            axios.get(this.allproxiesRoute)
+            //At the entrance of the page the prev button will be disabled.
+            this.page > 1 ? this.disablePrevPageButton = false : this.disablePrevPageButton = true;
+
+            axios.get(this.allproxiesRoute+ "?page="+this.page)
             .then(response => {
-                console.log(response.data);
-                this.proxies = response.data;
+                this.proxies = response.data.data;
+                this.totalPages = response.data.last_page;
+
+                // here if we are at the last page the next button will be disabled.
+                // if we are not at the last page it will be enabled.
+                this.page === this.totalPages ? this.disableNextPageButton = true : this.disableNextPageButton = false;
+
             })
             .catch(error =>{
                 console.log("Error: " + error.response.data.message);
             })
 
-        }
+        },
 
+        NextPage(){
+            this.page++;
+        },
+        PrevPage(){
+            this.page--;
+        },
+
+    },
+
+
+    watch:{
+        page: function(){
+            this.GetProxyListFunction();
+        }
     },
 
 mounted(){
