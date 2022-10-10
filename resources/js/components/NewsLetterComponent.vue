@@ -66,24 +66,6 @@ export default {
         });
     },
 
-
-
-    Notification(icon, message)
-    {
-      this.$swal({
-        icon: icon,
-        title: message,
-        didOpen: (toast) => {
-          toast.addEventListener("mouseenter", this.$swal.stopTimer);
-          toast.addEventListener("mouseleave", this.$swal.resumeTimer);
-        },
-      });
-
-    },
-
-
-
-
   },
 };
 </script>

@@ -33,7 +33,7 @@
                                     <td>{{ proxy['Protocol'] }}</td>
                                     <td><span v-bind:class="[proxy['Blacklisted'] ? 'label-category label--red' : 'label-category  label--green']">{{ proxy['Blacklisted'] ? 'BLACKLISTED' : 'CLEAN' }}</span></td>
                                     <td>{{ proxy['created_at'] }}</td>
-                                    <td><button v-bind:data-clipboard-text="proxy['ProxyIP']"  class="btn crumina-button button--yellow" @click.prevent="this.CopyToClipboard()">Copy</button></td>
+                                    <td><button v-bind:data-clipboard-text="proxy['ProxyIP']"  class="btn crumina-button button--yellow" @click.prevent="this.CopyToClipboard(proxy['ProxyIP'])">Copy</button></td>
                                 </tr>
                             </tbody>
 
@@ -102,7 +102,7 @@ export default {
 
 
         CopyToClipboard(proxy){
-            console.log(proxy);
+            console.log(proxy + " Copied");
         },
 
 

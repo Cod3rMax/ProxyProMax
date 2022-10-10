@@ -41,8 +41,29 @@ const options = {
 
   };
 
-
 app.use(VueSweetalert2, options);
+
+
+//here to make global functions
+
+
+app.mixin({
+    methods:{
+        Notification(icon, message){
+            this.$swal({
+                icon: icon,
+                title: message,
+                didOpen: (toast) => {
+                  toast.addEventListener("mouseenter", this.$swal.stopTimer);
+                  toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+                },
+              });
+        }
+    }
+});
+
+
+
 
 
 app.mount('#app');
