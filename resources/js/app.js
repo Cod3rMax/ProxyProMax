@@ -36,7 +36,6 @@ const options = {
     toast: true,
     position: 'top',
     showConfirmButton: false,
-    timer: 3500,
     timerProgressBar: true,
 
   };
@@ -49,10 +48,11 @@ app.use(VueSweetalert2, options);
 
 app.mixin({
     methods:{
-        Notification(icon, message){
+        Notification(icon, message, timer){
             this.$swal({
                 icon: icon,
                 title: message,
+                timer: timer,
                 didOpen: (toast) => {
                   toast.addEventListener("mouseenter", this.$swal.stopTimer);
                   toast.addEventListener("mouseleave", this.$swal.resumeTimer);

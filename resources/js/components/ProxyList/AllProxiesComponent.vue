@@ -102,7 +102,7 @@ export default {
 
 
         CopyToClipboard(proxy){
-            console.log(proxy + " Copied");
+            this.Notification("success",proxy + " Copied", 1700);
         },
 
 
@@ -114,6 +114,8 @@ export default {
         PrevPage(){
             this.page--;
         },
+
+
 
     },
 

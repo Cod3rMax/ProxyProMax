@@ -57,7 +57,7 @@ export default {
         .post("api/Subscribe", this.form)
         .then((response) => {
 
-          this.Notification("success",response.data);
+          this.Notification("success",response.data, 3500);
 
           this.form.email = null;
         })
