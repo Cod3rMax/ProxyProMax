@@ -14,7 +14,7 @@
         content="Free Proxy List, proxy site list, Proxy List, fresh unblocked proxy sites, daily proxies, daily proxy list, hide your IP address, proxy server">
 
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/vendors/Bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
 
 </head>
 
