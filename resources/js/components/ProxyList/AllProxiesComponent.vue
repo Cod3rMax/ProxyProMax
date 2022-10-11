@@ -8,7 +8,6 @@
                         </div>
                 </div>
 
-
                     <div>
                         <table class="table table-responsive-lg table--style3 align-center">
                             <thead class="thead-dark">
@@ -30,7 +29,7 @@
                                     <td>{{ proxy['Protocol'] }}</td>
                                     <td><span v-bind:class="[proxy['Blacklisted'] ? 'label-category label--red' : 'label-category  label--green']">{{ proxy['Blacklisted'] ? 'BLACKLISTED' : 'CLEAN' }}</span></td>
                                     <td>{{ proxy['created_at'] }}</td>
-                                    <td><button v-bind:id="'CopyButton'+key " v-bind:data-clipboard-text="proxy['ProxyIP']"  class="btn crumina-button button--yellow" @click.prevent="this.CopyToClipboard(proxy['ProxyIP'],'CopyButton'+key)">Copy</button></td>
+                                    <td><button v-bind:id="'CopyButton'+key" v-bind:data-clipboard-text="proxy['ProxyIP']"  class="btn crumina-button button--yellow" @click.prevent="this.CopyToClipboard(proxy['ProxyIP'],'CopyButton'+key)">Copy</button></td>
                                 </tr>
                             </tbody>
 
@@ -98,15 +97,13 @@ export default {
         },
 
 
-        CopyToClipboard(proxy, elementID){
-
+        CopyToClipboard(proxy,elementID){
             this.Notification("success",proxy + " Copied", 1700);
-            document.getElementById(elementID).textContent = "Copied...";
+                document.getElementById(elementID).textContent = "Copied...";
+
             setInterval(() => {
                 document.getElementById(elementID).textContent = "Copy";
-            }, 1000);
-
-
+            }, 2000);
         },
 
 
