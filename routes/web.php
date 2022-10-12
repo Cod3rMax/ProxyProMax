@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProxiesController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\UserChangePasswordController;
 use App\Http\Controllers\UserEmailConfirmationController;
 
 /*
@@ -22,7 +23,7 @@ use App\Http\Controllers\UserEmailConfirmationController;
 Route::get('/',[MainPageController::class,'index'])->name('MainPage');
 
 
-//Registration system routes
+//Registration system routes with security middleware
 
 Route::middleware('AuthenticatedUsersMiddleware')->group(function () {
 
@@ -30,11 +31,18 @@ Route::middleware('AuthenticatedUsersMiddleware')->group(function () {
     Route::get('Auth/login',[AuthController::class,'login'])->name('UserLogin');
 
 });
+
+
+//User must be logged in to access this route!
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get('Auth/ChangePassword',[UserChangePasswordController::class,'index'])->name('ChangeUserPassword');
+});
+
+
+
+
 Route::middleware('UsersConfirmationMiddleware')->get('Auth/UserConfirmation',[UserEmailConfirmationController::class,'index'])->name('UserConfirmation');
 Route::get('Auth/Logout', function(){ Auth::logout(); return redirect()->back(); })->name('UserLogout');
-
-
-
 
 
 
