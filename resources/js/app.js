@@ -38,6 +38,10 @@ import UsaProxiesComponent from "./components/ProxyList/UsaProxiesComponent.vue"
 app.component('usaproxies-component', UsaProxiesComponent);
 
 
+import ChangePasswordComponent from "./components/Auth/ChangePasswordComponent.vue";
+app.component('changepassword-component', ChangePasswordComponent);
+
+
 const options = {
 
     toast: true,
