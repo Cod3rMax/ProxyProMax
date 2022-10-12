@@ -34,7 +34,7 @@
 
 
          <div id="app">
-            <allproxies-component :allproxies-route="'{{ Route('AllProxiesAPI') }}'" :is-user-logged="'{{ Auth::check() }}'"></allproxies-component>
+            <allproxies-component :login-route="'{{ Route('UserLogin') }}'" :allproxies-route="'{{ Route('AllProxiesAPI') }}'" :is-user-logged="'{{ Auth::check() }}'"></allproxies-component>
          </div>
 
 

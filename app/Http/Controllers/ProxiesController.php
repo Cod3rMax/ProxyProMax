@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Proxies;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProxiesController extends Controller
 {
@@ -13,7 +14,29 @@ class ProxiesController extends Controller
 
 
     public function GetAllProxies(){
-        return response()->json(Proxies::paginate(10),200);
+
+        $Proxies = Proxies::paginate(10);
+
+        if(!Auth::check() && $Proxies->currentPage() > 4){
+
+            return response()->json([
+                "data"=> [
+                    "data"=> [
+                        "Blacklisted"=>1,
+                        "Country"=>"Login required",
+                        "Protocol"=>"Login required",
+                        "ProxyIP"=>"Login required",
+                        "created_at"=>"3 weeks ago",
+                        "id"=>1,
+                        "updated_at"=>"3 weeks ago"]
+                        ]
+            ],200);
+
+        }
+
+    return response()->json($Proxies,200);
+
+
     }
 
 

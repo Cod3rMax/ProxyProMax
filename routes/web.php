@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\Proxies;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ProxiesController;
+use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\UserEmailConfirmationController;
 
 /*
@@ -76,8 +77,31 @@ Route::get('testlogin', function(){
     return "not logged";
 });
 
-Route::get('testlogout', function(){
-Auth::logout();
+Route::get('testdb', function(){
+
+
+    $object = [
+        "data"=> [
+            "data"=> [
+                "Blacklisted"=>1,
+                "Country"=>"Login required",
+                "Protocol"=>"Login required",
+                "ProxyIP"=>"Login required",
+                "created_at"=>"3 weeks ago",
+                "id"=>1,
+                "updated_at"=>"3 weeks ago"],
+                "data"=> [
+                    "Blacklisted"=>1,
+                    "Country"=>"Login required",
+                    "Protocol"=>"Login required",
+                    "ProxyIP"=>"Login required",
+                    "created_at"=>"3 weeks ago",
+                    "id"=>1,
+                    "updated_at"=>"3 weeks ago"]
+            ],
+            ];
+
+    return response()->json($object,200);
 });
 
 Route::get('dbdelete', function(){
