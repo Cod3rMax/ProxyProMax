@@ -78,9 +78,6 @@
 
 
 
-
-
-
                     <div v-else style="cursor: pointer;" @click.prevent="this.RedirectToLoginFunction()">
                     <div class="CenterLoginRequired"><span style="color: red">Login</span> is required to continue</div>
                         <table class="table table-responsive-lg table--style3 align-center blurMyTable">
@@ -162,8 +159,6 @@ export default {
             //At the entrance of the page the prev button will be disabled.
             this.page > 1 ? this.disablePrevPageButton = false : this.disablePrevPageButton = true;
 
-
-
             axios.get(this.allproxiesRoute+ "?page="+this.page)
             .then(response => {
                 this.proxies = response.data.data;
@@ -173,7 +168,7 @@ export default {
                 // if we are not at the last page it will be enabled.
                 this.page === this.totalPages ? this.disableNextPageButton = true : this.disableNextPageButton = false;
 
-                //If the user not loggedin, and arrive to page more than 4 so disable next button
+                //If the user not loggedin, and arrive to page more than 4 so disable next button and show instead a login button
                 !this.isUserLogged && this.page > 4 ? (this.disableNextPageButton = true , this.showLoginButton = true) : this.showLoginButton = false;
 
             })
@@ -208,7 +203,6 @@ export default {
         },
 
 
-
     },
 
 
@@ -220,11 +214,6 @@ export default {
 
 mounted(){
     this.GetProxyListFunction();
-    if(this.isUserLogged){
-        console.log("user is logged in");
-    }else {
-        console.log("user logged out");
-    }
 }
 
 }
