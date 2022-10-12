@@ -81,7 +81,7 @@ class ProxiesController extends Controller
     }
 
     public function GetUsaProxies(){
-        $Proxies = Proxies::Where('Country','United Kingdom')->orderBy('id','desc')->paginate(10);
+        $Proxies = Proxies::Where('Country','United States')->orderBy('id','desc')->paginate(10);
 
         if(!Auth::check() && $Proxies->currentPage() > 4){
 
