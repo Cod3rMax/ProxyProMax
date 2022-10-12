@@ -45,6 +45,7 @@ Route::get('Auth/Logout', function(){ Auth::logout(); return redirect()->back();
 
 Route::get('AllProxies',[ProxiesController::class,'index'])->name('AllProxies');
 Route::get('UkProxies',[ProxiesController::class,'ukindex'])->name('UKProxies');
+Route::get('UsaProxies',[ProxiesController::class,'usaindex'])->name('UsaProxies');
 
 
 

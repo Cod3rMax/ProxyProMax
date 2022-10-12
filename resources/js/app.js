@@ -34,6 +34,8 @@ app.component('allproxies-component', AllProxiesComponent);
 import UkProxiesComponent from "./components/ProxyList/UkProxiesComponent.vue";
 app.component('ukproxies-component', UkProxiesComponent);
 
+import UsaProxiesComponent from "./components/ProxyList/UsaProxiesComponent.vue";
+app.component('usaproxies-component', UsaProxiesComponent);
 
 
 const options = {
