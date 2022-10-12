@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 m-auto">
           <div class="form--bordered">
-            <h6 class="form-title-with-border" id="interactWithUser">[ {{ this.messageToTheUser }} ]</h6>
+            <h6 class="form-title-with-border" id="interactWithUser" style="font-size: 15px;">[ {{ this.messageToTheUser }} ]</h6>
 
             <div class="input--with-icon input--icon-right">
               <input
@@ -56,7 +56,7 @@
                 medium-padding40
               "
             >
-              <button class="crumina-button button--yellow button--l">
+              <button class="crumina-button button--yellow button--l" @click.prevent="this.changePasswordFunction()">
                 Change Password
               </button>
             </div>
@@ -68,39 +68,160 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-  data() {
-    return {
-      messageToTheUser: "this is an interaction message to the user",
-      form:{
-        password: null,
-        new_password: null,
-        password_confirmation: null,
-      }
-    };
-  },
+
+    props: ["changepasswordRoute"],
+
+
+    data() {
+        return {
+            messageToTheUser: "Enter your details below",
+            form: {
+                password: "",
+                new_password: "",
+                password_confirmation: "",
+            }
+        };
+    },
 
   methods: {
 
 
     interactWithUserFunction(currentPassword = false, newPassword = false, confirmPassword = false) {
 
+        var userMessage = document.getElementById("interactWithUser").style;
 
         if(currentPassword){
-            console.log("User interacting with currentPassword: " + this.form.password);
+            console.log("ee")
+          if(this.form.password === ""){
+            userMessage.color = 'green';
+            this.messageToTheUser = "Come on man, enter your actual password";
+          }
+          else if(this.form.password.trim().length > 3 && this.form.password.trim().length < 7){
+            userMessage.color = 'red';
+            this.messageToTheUser = "Write a normal password bruuuh! with min 8 chars";
+          }
+          else if(this.form.password.trim().length >= 8 && this.form.password.trim().length <= 12){
+            userMessage.color = 'green';
+            this.messageToTheUser = "A password up to 15 chars! as you wish!";
+          }
+          else if(this.form.password.trim().length > 12 && this.form.password.trim().length < 15){
+            userMessage.color = 'orange';
+            this.messageToTheUser = "Remember up to 15 max i think yeah";
+          }
+          else if(this.form.password.trim().length > 15 && this.form.password.trim().length != 15){
+            userMessage.color = 'red';
+            this.messageToTheUser = "i said up to 15 bro 15 only don't be stupid now!";
+          }
+          else if(this.form.password.trim().length === 15) {
+            userMessage.color = 'green';
+            this.messageToTheUser = "I think your password is okay now";
+          }
+
         }
+
+
+
+
         else if(newPassword){
-            console.log("User interacting with newPassword: " + this.form.new_password);
+
+            if(this.form.new_password === ""){
+            userMessage.color = 'green';
+            this.messageToTheUser = "Same rules apply :)";
+          }
+            else if(this.form.new_password.trim().length > 3 && this.form.new_password.trim().length < 7){
+                userMessage.color = 'red';
+                this.messageToTheUser = "I said same rules 😡 min 8 chars";
+            }
+            else if(this.form.new_password.trim().length >= 8 && this.form.new_password.trim().length <= 12){
+                userMessage.color = 'green';
+                this.messageToTheUser = "So yeah up to 15 chars as you wish 😅";
+            }
+            else if(this.form.new_password.trim().length > 12 && this.form.new_password.trim().length < 15){
+                userMessage.color = 'orange';
+                this.messageToTheUser = "Remember 😎 up to 15 max i think yeah";
+            }
+            else if(this.form.new_password.trim().length > 15 && this.form.new_password.trim().length != 15){
+                userMessage.color = 'red';
+                this.messageToTheUser = "I said up to 15 you **** dumb 😡";
+            }
+            else if(this.form.new_password.trim().length === 15) {
+                userMessage.color = 'green';
+                this.messageToTheUser = "I think your password is okay now 🙃";
+            }
+
         }
+
+
+
+
         else {
-            console.log("User interacting with confirmPassword: " + this.form.password_confirmation);
+
+            if(this.form.new_password === this.form.password_confirmation){
+                userMessage.color = 'green';
+                this.messageToTheUser = "niiiice, good to go 😎";
+            }
+            else if(this.form.password_confirmation === ""){
+                userMessage.color = 'green';
+                this.messageToTheUser = "I think you know what to do 😎";
+            }
+            else if(this.form.password_confirmation.trim().length > 3 && this.form.password_confirmation.trim().length < 7){
+                    userMessage.color = 'red';
+                    this.messageToTheUser = "Just confirm your **** password 😡";
+            }
+            else if(this.form.password_confirmation.trim().length >= 8 && this.form.password_confirmation.trim().length <= 12){
+                    userMessage.color = 'green';
+                    this.messageToTheUser = "Is your new password up to 15 chars? 😅";
+            }
+            else if(this.form.password_confirmation.trim().length > 12 && this.form.password_confirmation.trim().length < 15){
+                    userMessage.color = 'orange';
+                    this.messageToTheUser = "Remember 😎 up to 15 max i think yeah";
+            }
+            else if(this.form.password_confirmation.trim().length > 15 && this.form.password_confirmation.trim().length != 15){
+                    userMessage.color = 'red';
+                    this.messageToTheUser = "I said up to 15 you driving me crazy **** 😡";
+            }
+            else if(this.form.password_confirmation.trim().length === 15 && this.form.new_password !== this.form.password_confirmation) {
+                    userMessage.color = 'red';
+                    this.messageToTheUser = "Cofirm your **** password 🤢";
+            }
+
+
         }
+
+
+
+
 
     },
 
 
 
 
+    changePasswordFunction(){
+
+        axios.post(this.changepasswordRoute, this.form)
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error.response.data)
+            })
+
+    }
+
+
+
+
+
   },
+
+
+
+
+
+
+
 };
 </script>

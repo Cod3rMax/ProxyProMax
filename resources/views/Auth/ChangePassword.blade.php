@@ -34,7 +34,7 @@
 
 
          <div id="app">
-            <changepassword-component></changepassword-component>
+            <changepassword-component :changepassword-route="'{{ Route('ChangeUserPasswordAPI') }}'"></changepassword-component>
          </div>
 
 

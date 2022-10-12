@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ChangeUserPasswordRequest;
 
 class UserChangePasswordController extends Controller
 {
@@ -13,5 +13,8 @@ class UserChangePasswordController extends Controller
     }
 
 
+    public function ChangePassword(ChangeUserPasswordRequest $request){
+        return response()->json($request->all(), 200);
+    }
 
 }

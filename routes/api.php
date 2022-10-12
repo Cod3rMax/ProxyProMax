@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProxiesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProxiesController;
+use App\Http\Controllers\UserChangePasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,10 @@ Route::middleware('AuthenticatedUsersMiddleware')->group(function () {
 
 });
 
-
+//User must be logged in to access this route!
+Route::middleware('auth:sanctum')->group(function(){
+    Route::post('Auth/ChangePassword',[UserChangePasswordController::class,'ChangePassword'])->name('ChangeUserPasswordAPI');
+});
 
 Route::middleware('UsersConfirmationMiddleware')->post('Auth/UserConfirmation', [\App\Http\Controllers\UserEmailConfirmationController::class, 'confirm'])->name('UserConfirmationAPI');
 
