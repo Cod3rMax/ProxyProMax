@@ -35,8 +35,16 @@ class ProxiesController extends Controller
         }
 
     return response()->json($Proxies,200);
+    }
 
 
+
+
+
+
+
+    public function ukindex(){
+        return view('ProxyList.UkProxies');
     }
 
 

@@ -31,6 +31,11 @@ import AllProxiesComponent from "./components/ProxyList/AllProxiesComponent.vue"
 app.component('allproxies-component', AllProxiesComponent);
 
 
+import UkProxiesComponent from "./components/ProxyList/UkProxiesComponent.vue";
+app.component('ukproxies-component', UkProxiesComponent);
+
+
+
 const options = {
 
     toast: true,

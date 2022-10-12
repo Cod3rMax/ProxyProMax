@@ -44,6 +44,7 @@ Route::get('Auth/Logout', function(){ Auth::logout(); return redirect()->back();
 //Proxies routes to be displayed to the users
 
 Route::get('AllProxies',[ProxiesController::class,'index'])->name('AllProxies');
+Route::get('UkProxies',[ProxiesController::class,'ukindex'])->name('UKProxies');
 
 
 
