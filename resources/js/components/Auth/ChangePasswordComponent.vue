@@ -11,7 +11,9 @@
                 class="input--grey input--squared"
                 type="password"
                 placeholder="Enter your current password..."
+                v-model="form.password"
                 @keyup="this.interactWithUserFunction(true,false,false)"
+                @focus="this.interactWithUserFunction(true,false,false)"
               />
               <svg class="crumina-icon">
                 <use xlink:href="#icon-triangle-arrow"></use>
@@ -23,7 +25,9 @@
                 class="input--grey input--squared"
                 type="password"
                 placeholder="Enter your new password..."
+                v-model="form.new_password"
                 @keyup="this.interactWithUserFunction(false,true,false)"
+                @focus="this.interactWithUserFunction(false,true,false)"
               />
               <svg class="crumina-icon">
                 <use xlink:href="#icon-triangle-arrow"></use>
@@ -35,7 +39,9 @@
                 class="input--grey input--squared"
                 type="password"
                 placeholder="Confirm your new password..."
+                v-model="form.password_confirmation"
                 @keyup="this.interactWithUserFunction(false,false,true)"
+                @focus="this.interactWithUserFunction(false,false,true)"
               />
               <svg class="crumina-icon">
                 <use xlink:href="#icon-triangle-arrow"></use>
@@ -66,6 +72,11 @@ export default {
   data() {
     return {
       messageToTheUser: "this is an interaction message to the user",
+      form:{
+        password: null,
+        new_password: null,
+        password_confirmation: null,
+      }
     };
   },
 
@@ -76,13 +87,13 @@ export default {
 
 
         if(currentPassword){
-            console.log("User interacting with currentPassword");
+            console.log("User interacting with currentPassword: " + this.form.password);
         }
         else if(newPassword){
-            console.log("User interacting with newPassword");
+            console.log("User interacting with newPassword: " + this.form.new_password);
         }
         else {
-            console.log("User interacting with confirmPassword");
+            console.log("User interacting with confirmPassword: " + this.form.password_confirmation);
         }
 
     },
