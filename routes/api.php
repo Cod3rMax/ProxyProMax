@@ -41,3 +41,4 @@ Route::middleware('UsersConfirmationMiddleware')->post('Auth/UserConfirmation', 
 
 
 Route::get('ProxyList/AllProxies',[ProxiesController::class,'GetAllProxies'])->name('AllProxiesAPI');
+Route::get('ProxyList/UkProxies',[ProxiesController::class,'GetUkProxies'])->name('UkProxiesAPI');

@@ -34,7 +34,7 @@
 
 
          <div id="app">
-            <ukproxies-component :login-route="'{{ Route('UserLogin') }}'" :allproxies-route="'{{ Route('AllProxiesAPI') }}'" :is-user-logged="'{{ Auth::check() }}'"></ukproxies-component>
+            <ukproxies-component :login-route="'{{ Route('UserLogin') }}'" :allproxies-route="'{{ Route('UkProxiesAPI') }}'" :is-user-logged="'{{ Auth::check() }}'"></ukproxies-component>
          </div>
 
 

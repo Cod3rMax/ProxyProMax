@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(50)->create();
         \App\Models\UserEmailConfirmation::factory(50)->create();
-        \App\Models\Proxies::factory(200)->create();
+        \App\Models\Proxies::factory(500)->create();
         \App\Models\Subscribe::factory(50)->create();
         \App\Models\SocialMediaLink::factory(1)->create();
     }

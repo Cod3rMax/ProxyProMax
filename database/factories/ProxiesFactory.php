@@ -18,7 +18,7 @@ class ProxiesFactory extends Factory
     {
         return [
             'ProxyIP' => rand(100,200).".".rand(100,200).".".rand(50,200).".".rand(50,200).":".rand(1000,2000),
-            'Country' => $this->faker->country,
+            'Country' => $this->faker->randomElement([$this->faker->country,"United Kingdom",$this->faker->country,"United States"]),
             'Protocol' => $this->faker->randomElement(['HTTP','HTTPS','SOCKS5','SOCKS4','SOCKS4A']),
             'Blacklisted' => rand(0,1),
         ];
