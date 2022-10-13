@@ -14,7 +14,7 @@
                             </div>
 
                             <div class="universal-btn-wrapper">
-                                <button @click.prevent="this.startCheckingProxies();" class="crumina-button button--orange button--l">Start Checking</button>
+                                <button @click.prevent="this.beforeStartCheckingProxies();" class="crumina-button button--orange button--l">Start Checking</button>
                             </div>
 
 
@@ -61,12 +61,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="font-weight-bold">
-                            <td>zdadzad</td>
-                            <td>zdadzad</td>
-                            <td>zdadzad</td>
-                            <td>zdadzad</td>
-                            <td>zdadzad</td>
+                        <tr class="font-weight-bold" v-for="proxy in this.proxiesToBeChecked">
+                            <td>{{ proxy.ProxyIP }}</td>
+                            <td>{{ proxy.Country }}</td>
+                            <td>{{ proxy.Protocol }}</td>
+                            <td>{{ proxy.Blacklist }}</td>
+                            <td>{{ proxy.Statuts }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -85,6 +85,9 @@ export default {
     data(){
         return {
             proxyList : [],
+            tempProxyList: [],
+            tempProxyListCounter: 0,
+            proxiesToBeChecked: [],
         }
     },
 
@@ -112,28 +115,58 @@ export default {
             while ((m = proxy_pattern.exec(proxies)) != null) {
                 this.proxyList.push(m[1] + ':' + m[2]);
             }
+
+            // Here to get unique data of proxies entered by user
             this.proxyList = this.proxyList.getUnique();
+            // Here to store the unique proxies into temp variable
+            this.tempProxyList = this.proxyList;
+            // Here to join the proxies that will be shown to the user
             this.proxyList = this.proxyList.join('\n');
+
         },
 
 
 
+
+        // Here to convert the proxy list that will be checked to an object before starting the checking
+
+        beforeStartCheckingProxies() {
+
+            this.tempProxyList.forEach(tempProxy => {
+
+                this.proxiesToBeChecked.push({
+                    id: this.tempProxyListCounter,
+                    ProxyIP: tempProxy,
+                    Country: 'N/A',
+                    Protocol: 'N/A',
+                    Blacklist: 'N/A',
+                    Statuts: 'N/A',
+                });
+
+                this.tempProxyListCounter++;
+
+            });
+
+            this.tempProxyListCounter = 0;
+            this.startCheckingProxies();
+        },
+
+
+        // Here to start checking the proxy list
 
         startCheckingProxies(){
-            //console.log(this.proxyList);
-            this.removeOneLineFromTheProxyList();
-            //console.log(this.proxyList);
+
+            console.log("Checking has been started");
+            console.log(this.proxiesToBeChecked);
+
         },
 
 
 
-
-        removeOneLineFromTheProxyList(){
-          this.proxyList =  this.proxyList.split("\n");
-          this.proxyList.splice(0,1);
-          console.log(this.proxyList)
+        removeOneLineFromTheProxyList() {
+            this.proxyList = this.proxyList.split("\n");
+            this.proxyList.splice(0, 1);
             this.proxyList = this.proxyList.join("\n")
-
         },
 
 
