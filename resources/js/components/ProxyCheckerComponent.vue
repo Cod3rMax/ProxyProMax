@@ -14,7 +14,7 @@
                             </div>
 
                             <div class="universal-btn-wrapper">
-                                <button class="crumina-button button--orange button--l">Start Checking</button>
+                                <button @click.prevent="this.startCheckingProxies();" class="crumina-button button--orange button--l">Start Checking</button>
                             </div>
 
 
@@ -115,6 +115,27 @@ export default {
             this.proxyList = this.proxyList.getUnique();
             this.proxyList = this.proxyList.join('\n');
         },
+
+
+
+
+        startCheckingProxies(){
+            //console.log(this.proxyList);
+            this.removeOneLineFromTheProxyList();
+            //console.log(this.proxyList);
+        },
+
+
+
+
+        removeOneLineFromTheProxyList(){
+          this.proxyList =  this.proxyList.split("\n");
+          this.proxyList.splice(0,1);
+          console.log(this.proxyList)
+            this.proxyList = this.proxyList.join("\n")
+
+        },
+
 
     },
 
