@@ -4,7 +4,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 m-auto">
           <div class="form--bordered">
-            <h6 class="form-title-with-border" id="interactWithUser" style="font-size: 15px;">[ {{ this.messageToTheUser }} ]</h6>
+            <h6 class="form-title-with-border" id="interactWithUser" style="font-size: 2.3vmin;">[ {{ this.messageToTheUser }} ]
+            </h6>
 
             <div class="input--with-icon input--icon-right">
               <input
@@ -192,8 +193,6 @@ export default {
 
 
 
-
-
     },
 
 
@@ -203,10 +202,13 @@ export default {
 
         axios.post(this.changepasswordRoute, this.form)
             .then(response => {
-                console.log(response.data);
+                document.getElementById("interactWithUser").style.color = 'green';
+                this.messageToTheUser = response.data + "😚";
+                this.form = "";
             })
             .catch(error => {
-                console.log(error.response.data)
+                document.getElementById("interactWithUser").style.color = 'red';
+                this.messageToTheUser = error.response.data.message;
             })
 
     }
