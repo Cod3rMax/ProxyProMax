@@ -132,6 +132,9 @@ export default {
 
         beforeStartCheckingProxies() {
 
+            // Clean the proxies before starting a new check
+            this.proxiesToBeChecked = [];
+
             this.tempProxyList.forEach(tempProxy => {
 
                 this.proxiesToBeChecked.push({
