@@ -22,7 +22,7 @@ class UserChangePasswordController extends Controller
 
         if(password_verify($request->only('password')['password'], User::find($userID)->password)){
 
-            User::findOrFail($userID)->update(["password"=>bcrypt($request->only('password')['password'])]);
+            User::findOrFail($userID)->update(["password"=>bcrypt($request->only('new_password')['new_password'])]);
             return response()->json(['Password has been changed!'], 200);
 
         }
