@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProxiesController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\ProxyCheckerController;
 use App\Http\Controllers\UserChangePasswordController;
 use App\Http\Controllers\UserEmailConfirmationController;
 
@@ -39,8 +40,6 @@ Route::middleware('auth:sanctum')->group(function(){
 });
 
 
-
-
 Route::middleware('UsersConfirmationMiddleware')->get('Auth/UserConfirmation',[UserEmailConfirmationController::class,'index'])->name('UserConfirmation');
 Route::get('Auth/Logout', function(){ Auth::logout(); return redirect()->back(); })->name('UserLogout');
 
@@ -50,7 +49,7 @@ Route::get('Auth/Logout', function(){ Auth::logout(); return redirect()->back();
 
 
 //Proxies routes to be displayed to the users
-
+Route::get('ProxyChecker',[ProxyCheckerController::class,'index']);
 Route::get('AllProxies',[ProxiesController::class,'index'])->name('AllProxies');
 Route::get('UkProxies',[ProxiesController::class,'ukindex'])->name('UKProxies');
 Route::get('UsaProxies',[ProxiesController::class,'usaindex'])->name('UsaProxies');

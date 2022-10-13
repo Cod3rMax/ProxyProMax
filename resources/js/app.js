@@ -41,6 +41,10 @@ app.component('usaproxies-component', UsaProxiesComponent);
 import ChangePasswordComponent from "./components/Auth/ChangePasswordComponent.vue";
 app.component('changepassword-component', ChangePasswordComponent);
 
+//ProxyCheckerComponent.vue
+import ProxyCheckerComponent from "./components/ProxyCheckerComponent.vue";
+app.component('proxychecker-component', ProxyCheckerComponent);
+
 
 const options = {
 
@@ -49,7 +53,7 @@ const options = {
     showConfirmButton: false,
     timerProgressBar: true,
 
-  };
+};
 
 app.use(VueSweetalert2, options);
 
@@ -58,17 +62,17 @@ app.use(VueSweetalert2, options);
 
 
 app.mixin({
-    methods:{
-        Notification(icon, message, timer){
+    methods: {
+        Notification(icon, message, timer) {
             this.$swal({
                 icon: icon,
                 title: message,
                 timer: timer,
                 didOpen: (toast) => {
-                  toast.addEventListener("mouseenter", this.$swal.stopTimer);
-                  toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+                    toast.addEventListener("mouseenter", this.$swal.stopTimer);
+                    toast.addEventListener("mouseleave", this.$swal.resumeTimer);
                 },
-              });
+            });
         }
     }
 });
