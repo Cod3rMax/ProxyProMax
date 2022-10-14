@@ -82,6 +82,8 @@
 
 <script>
 export default {
+
+    props: ["proxycheckerRoute"],
     data(){
         return {
             proxyList : [],
@@ -138,7 +140,7 @@ export default {
             this.tempProxyList.forEach(tempProxy => {
 
                 this.proxiesToBeChecked.push({
-                    id: this.tempProxyListCounter,
+                    ProxyID: this.tempProxyListCounter,
                     ProxyIP: tempProxy,
                     Country: 'N/A',
                     Protocol: 'N/A',
@@ -165,6 +167,15 @@ export default {
 
                 console.log("Checking----->: " + proxy.ProxyIP);
 
+                axios.post(this.proxycheckerRoute, {ProxyID: proxy.ProxyID, ProxyIP: proxy.ProxyIP })
+                    .then(response => {
+                        console.log(response.data);
+                    })
+                    .catch(error => {
+                        console.log(error.response.data)
+                    })
+
+
                 console.log("Remove one line from the proxies");
                 this.removeOneLineFromTheProxyList();
 
@@ -182,8 +193,6 @@ export default {
 
 
     },
-
-
 
 }
 </script>

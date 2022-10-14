@@ -12,7 +12,7 @@
 
 
 <div id="app">
-<proxychecker-component></proxychecker-component>
+<proxychecker-component proxychecker-route="{{ Route('ProxyCheckerAPI') }}"></proxychecker-component>
 </div>
 
 

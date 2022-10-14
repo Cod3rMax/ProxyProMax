@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProxiesController;
+use App\Http\Controllers\ProxyCheckerController;
 use App\Http\Controllers\UserChangePasswordController;
 
 /*
@@ -43,7 +44,7 @@ Route::middleware('UsersConfirmationMiddleware')->post('Auth/UserConfirmation', 
 
 // Proxy List pages api
 
-
+Route::post('ProxyChecker', [ProxyCheckerController::class,'CheckProxy'])->name('ProxyCheckerAPI');
 Route::get('ProxyList/AllProxies',[ProxiesController::class,'GetAllProxies'])->name('AllProxiesAPI');
 Route::get('ProxyList/UkProxies',[ProxiesController::class,'GetUkProxies'])->name('UkProxiesAPI');
 Route::get('ProxyList/UkProxies',[ProxiesController::class,'GetUsaProxies'])->name('UsaProxiesAPI');
