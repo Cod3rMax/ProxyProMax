@@ -145,7 +145,7 @@ export default {
                     Country: 'N/A',
                     Protocol: 'N/A',
                     Blacklist: 'N/A',
-                    Statuts: 'N/A',
+                    Status: 'N/A',
                 });
 
                 this.tempProxyListCounter++;
