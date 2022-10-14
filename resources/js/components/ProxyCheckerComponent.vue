@@ -160,7 +160,15 @@ export default {
         startCheckingProxies(){
 
             console.log("Checking has been started");
-            console.log(this.proxiesToBeChecked);
+
+            this.proxiesToBeChecked.forEach(proxy => {
+
+                console.log("Checking----->: " + proxy.ProxyIP);
+
+                console.log("Remove one line from the proxies");
+                this.removeOneLineFromTheProxyList();
+
+            });
 
         },
 
