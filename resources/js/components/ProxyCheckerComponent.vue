@@ -167,12 +167,20 @@ export default {
 
                 console.log("Checking----->: " + proxy.ProxyIP);
 
-                axios.post(this.proxycheckerRoute, {ProxyID: proxy.ProxyID, ProxyIP: proxy.ProxyIP })
+                axios.post(this.proxycheckerRoute, { ProxyID: proxy.ProxyID, ProxyIP: proxy.ProxyIP })
                     .then(response => {
-                        console.log(response.data);
+
+                        console.log(response.data['Response']);
+
                     })
                     .catch(error => {
-                        console.log(error.response.data)
+
+                       console.log("Error: " + error.response.data)
+                       console.log("Error Timeout: " + error.response.timeout)
+                       console.log("Error response: " + error.response.response)
+                        console.table("table " + error.response)
+
+
                     })
 
 
