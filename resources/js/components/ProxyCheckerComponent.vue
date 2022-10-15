@@ -86,6 +86,7 @@ export default {
     props: ["proxycheckerRoute"],
     data(){
         return {
+            proxyProtocol: ['HTTPS','HTTP','SOCKS5','SOCKS4','SOCKS4A'],
             proxyList : [],
             tempProxyList: [],
             tempProxyListCounter: 0,
@@ -165,23 +166,18 @@ export default {
 
             this.proxiesToBeChecked.forEach(proxy => {
 
-                console.log("Checking----->: " + proxy.ProxyIP);
 
-                axios.post(this.proxycheckerRoute, { ProxyID: proxy.ProxyID, ProxyIP: proxy.ProxyIP })
-                    .then(response => {
-
-                        console.log(response.data['Response']);
-
-                    })
-                    .catch(error => {
-
-                       console.log("Error: " + error.response.data)
-                       console.log("Error Timeout: " + error.response.timeout)
-                       console.log("Error response: " + error.response.response)
-                        console.table("table " + error.response)
+                // send first proxy to be checked https send them all
+                // if one proxy die from https, send it again for http
+                // at the end socks4a.....if dies, it mean dead
+                // Protocols you have until 4
+                // Shoud create a function called intermidateCheckingProxies() to check proxies and recheck them
 
 
-                    })
+                console.log("Checking----->: " + proxy.ProxyIP +" With Protocol ----->: " + this.proxyProtocol[0]);
+
+
+                this.intermidateCheckingProxies(proxy.ProxyID, proxy.ProxyIP, this.proxyProtocol[0]);
 
 
                 console.log("Remove one line from the proxies");
@@ -190,6 +186,36 @@ export default {
             });
 
         },
+
+
+
+        intermidateCheckingProxies(ProxyID, ProxyIP, Protocol){
+
+
+            axios.post(this.proxycheckerRoute, { ProxyID: ProxyID, ProxyIP: ProxyIP, ProxyProtocol:  Protocol})
+                    .then(response => {
+                        console.log(response.data.Response);
+                        if (!response.data.Response['Expression_Status'] && response.data.Protocol == "HTTPS") {
+                            console.log('DIE----->: ' + this.proxiesToBeChecked[response.data.ProxyID].ProxyIP + " Die Protocol----->: " + response.data.Protocol);
+                            console.log(this.proxiesToBeChecked[response.data.ProxyID].ProxyIP + " Should be checked again with protocol HTTP");
+                            console.log("Sending---->: " + ProxyIP + " To be checked again");
+                            this.intermidateCheckingProxies(this.proxyProtocol[1]);
+                        }
+                        else {
+                            console.log("Proxy is LIVE and no need for more checking");
+                        }
+
+                    })
+                    .catch(error => {
+                        console.log("Error: " + error.response.data)
+                    })
+
+
+        },
+
+
+        // This function should update the live proxies.
+        finalCheckingProxies(){},
 
 
 

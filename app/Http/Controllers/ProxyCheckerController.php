@@ -16,8 +16,9 @@ class ProxyCheckerController extends Controller
     public function CheckProxy(Request $request){
         $ProxyIP  = $request->get('ProxyIP');
         $ProxyID  = $request->get('ProxyID');
+        $ProxyProtocol  = $request->get('ProxyProtocol');
         $Cod3rMax = new Cod3rMaxChecker();
-        return response()->json(["ProxyID"=>$ProxyID,"Response"=>$Cod3rMax->HTTPS($ProxyIP)],200);
+        return response()->json(["ProxyID"=>$ProxyID,"Protocol" => $ProxyProtocol,"Response"=>$Cod3rMax->HTTPS($ProxyIP)],200);
     }
 
 
