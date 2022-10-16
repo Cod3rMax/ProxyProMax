@@ -208,7 +208,7 @@ export default {
                         }
                         else if (!response.data.Response['Expression_Status'] && response.data.Protocol == "SOCKS4A") {
                             console.log("checked with socks4A and die so proxy die");
-                            this.ProxyStatus(response.data.ProxyID, 'N/A', 'N/A', 'N/A', 'Dead');
+                            this.ProxyStatus(response.data.ProxyID, response.data.ProxyDetails['country'], 'N/A', 'N/A', 'Dead');
                         }
                         else {
                             console.log("Proxy is LIVE and no need for more checking");
