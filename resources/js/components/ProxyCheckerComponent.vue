@@ -162,14 +162,14 @@ export default {
 
         startCheckingProxies(){
 
-            console.log("Checking has been started");
+            //console.log("Checking has been started");
 
             this.proxiesToBeChecked.forEach(proxy => {
 
                 this.intermidateCheckingProxies(proxy.ProxyID, proxy.ProxyIP, this.proxyProtocol[0]);
 
 
-                console.log("Remove one line from the proxies");
+                c//onsole.log("Remove one line from the proxies");
                 this.removeOneLineFromTheProxyList();
 
             });
@@ -180,38 +180,36 @@ export default {
 
         intermidateCheckingProxies(ProxyID, ProxyIP, Protocol){
 
-            // proxyProtocol: ['HTTPS','HTTP','SOCKS5','SOCKS4','SOCKS4A'],
-
 
             axios.post(this.proxycheckerRoute, { ProxyID: ProxyID, ProxyIP: ProxyIP, ProxyProtocol:  Protocol})
                     .then(response => {
 
                         if (!response.data.Response['Expression_Status'] && response.data.Protocol == "HTTPS") {
-                            console.log('DIE----->: ' + this.proxiesToBeChecked[response.data.ProxyID].ProxyIP + " Die Protocol----->: " + response.data.Protocol);
-                            console.log("Sending---->: " + ProxyIP + " To be checked again with protocol: " + this.proxyProtocol[1]);
+                            // console.log('DIE----->: ' + this.proxiesToBeChecked[response.data.ProxyID].ProxyIP + " Die Protocol----->: " + response.data.Protocol);
+                            // console.log("Sending---->: " + ProxyIP + " To be checked again with protocol: " + this.proxyProtocol[1]);
                             this.intermidateCheckingProxies(ProxyID, ProxyIP, this.proxyProtocol[1]);
                         }
                         else if (!response.data.Response['Expression_Status'] && response.data.Protocol == "HTTP") {
-                            console.log('DIE----->: ' + this.proxiesToBeChecked[response.data.ProxyID].ProxyIP + " Die Protocol----->: " + response.data.Protocol);
-                            console.log("Sending---->: " + ProxyIP + " To be checked again with protocol: " + this.proxyProtocol[2]);
+                            // console.log('DIE----->: ' + this.proxiesToBeChecked[response.data.ProxyID].ProxyIP + " Die Protocol----->: " + response.data.Protocol);
+                            // console.log("Sending---->: " + ProxyIP + " To be checked again with protocol: " + this.proxyProtocol[2]);
                             this.intermidateCheckingProxies(ProxyID, ProxyIP, this.proxyProtocol[2]);
                         }
                         else if (!response.data.Response['Expression_Status'] && response.data.Protocol == "SOCKS5") {
-                            console.log('DIE----->: ' + this.proxiesToBeChecked[response.data.ProxyID].ProxyIP + " Die Protocol----->: " + response.data.Protocol);
-                            console.log("Sending---->: " + ProxyIP + " To be checked again with protocol: " + this.proxyProtocol[3]);
+                            // console.log('DIE----->: ' + this.proxiesToBeChecked[response.data.ProxyID].ProxyIP + " Die Protocol----->: " + response.data.Protocol);
+                            // console.log("Sending---->: " + ProxyIP + " To be checked again with protocol: " + this.proxyProtocol[3]);
                             this.intermidateCheckingProxies(ProxyID, ProxyIP, this.proxyProtocol[3]);
                         }
                         else if (!response.data.Response['Expression_Status'] && response.data.Protocol == "SOCKS4") {
-                            console.log('DIE----->: ' + this.proxiesToBeChecked[response.data.ProxyID].ProxyIP + " Die Protocol----->: " + response.data.Protocol);
-                            console.log("Sending---->: " + ProxyIP + " To be checked again with protocol: " + this.proxyProtocol[4]);
+                            // console.log('DIE----->: ' + this.proxiesToBeChecked[response.data.ProxyID].ProxyIP + " Die Protocol----->: " + response.data.Protocol);
+                            // console.log("Sending---->: " + ProxyIP + " To be checked again with protocol: " + this.proxyProtocol[4]);
                             this.intermidateCheckingProxies(ProxyID, ProxyIP, this.proxyProtocol[4]);
                         }
                         else if (!response.data.Response['Expression_Status'] && response.data.Protocol == "SOCKS4A") {
-                            console.log("checked with socks4A and die so proxy die");
+                            // console.log("checked with socks4A and die so proxy die");
                             this.ProxyStatus(response.data.ProxyID, response.data.ProxyDetails['country'], 'N/A', 'N/A', 'Dead');
                         }
                         else {
-                            console.log("Proxy is LIVE and no need for more checking");
+                            // console.log("Proxy is LIVE and no need for more checking");
                             this.ProxyStatus(response.data.ProxyID, response.data.ProxyDetails['country'], response.data.Response['Protocol'], response.data.Response['Blacklist'], 'Live');
                         }
 
