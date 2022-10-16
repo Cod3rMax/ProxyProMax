@@ -169,7 +169,7 @@ export default {
                 this.intermidateCheckingProxies(proxy.ProxyID, proxy.ProxyIP, this.proxyProtocol[0]);
 
 
-                c//onsole.log("Remove one line from the proxies");
+                // console.log("Remove one line from the proxies");
                 this.removeOneLineFromTheProxyList();
 
             });
