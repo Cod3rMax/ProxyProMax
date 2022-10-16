@@ -212,7 +212,7 @@ export default {
                         }
                         else {
                             console.log("Proxy is LIVE and no need for more checking");
-                            console.log(response.data);
+                            this.ProxyStatus(response.data.ProxyID, response.data.ProxyDetails['country'], response.data.Response['Protocol'], response.data.Response['Blacklist'], 'Live');
                         }
 
                     })
