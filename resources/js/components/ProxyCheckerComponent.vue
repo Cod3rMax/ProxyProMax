@@ -167,7 +167,11 @@ export default {
             //console.log("Checking has been started");
 
             this.ShowResultSection = true;
-
+            window.scrollTo({
+                top: 470,
+                left: 0,
+                behavior: 'smooth'
+            });
             this.proxiesToBeChecked.forEach(proxy => {
 
                 this.intermidateCheckingProxies(proxy.ProxyID, proxy.ProxyIP, this.proxyProtocol[0]);
