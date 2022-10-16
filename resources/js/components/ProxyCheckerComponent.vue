@@ -25,7 +25,7 @@
         </section>
 
 
-        <div id="our-story" class="crumina-breadcrumbs breadcrumbs--dark-themes">
+        <div id="our-story" class="crumina-breadcrumbs breadcrumbs--dark-themes" v-bind:hidden="!this.ShowResultSection">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -43,7 +43,7 @@
         </div>
 
 
-        <section class="small-section-padding section-bg1">
+        <section class="small-section-padding section-bg1" v-bind:hidden="!this.ShowResultSection">
             <div class="container">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 align-center mb-5 ml-auto mr-auto">
                     <h2>Proxy Checker Result</h2>
@@ -91,6 +91,8 @@ export default {
             tempProxyList: [],
             tempProxyListCounter: 0,
             proxiesToBeChecked: [],
+
+            ShowResultSection: false,
         }
     },
 
@@ -163,6 +165,8 @@ export default {
         startCheckingProxies(){
 
             //console.log("Checking has been started");
+
+            this.ShowResultSection = true;
 
             this.proxiesToBeChecked.forEach(proxy => {
 
