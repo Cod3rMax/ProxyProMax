@@ -107,7 +107,19 @@
 			<div class="navigation-body-section navigation-additional-menu">
 
                 @if(Auth::check() && Auth::user()->UserConfirmation->confirmed)
-				<a href="{{ Route('UserLogout') }}" class="crumina-button button--uppercase button--yellow button--xs">Logout</a>
+
+				<button class="
+                crumina-button button--uppercase @if(Auth::user()->UserRole->role === "Subscriber") button--blue
+                                                 @elseif (Auth::user()->UserRole->role === "VIP") button--yellow
+                                                 @elseif (Auth::user()->UserRole->role === "Moderator") button--orange
+                                                 @else
+                                                 button--dark
+                                                 @endif button--s"
+
+                >Status: {{ Auth::user()->UserRole->role }} </button>
+
+
+
                 @elseif (Auth::check() && !Auth::user()->UserConfirmation->confirmed)
                 <a href="{{ Route('UserConfirmation') }}" class="crumina-button button--uppercase button--orange button--xs">Verify</a>
                 @else
