@@ -38,20 +38,20 @@
 
 
 						<li class="navigation-dropdown-item">
-							<a class="navigation-dropdown-link" href="07_domains.html">Free Proxy List</a>
+							<a class="navigation-dropdown-link" href="{{ Route('AllProxies') }}">Free Proxy List</a>
 						</li>
 
 
 						<li class="navigation-dropdown-item">
-							<a class="navigation-dropdown-link" href="08_domain_checking.html">UK Proxy List</a>
+							<a class="navigation-dropdown-link" href="{{ Route('UKProxies') }}">UK Proxy List</a>
                         </li>
 
                         <li class="navigation-dropdown-item">
-							<a class="navigation-dropdown-link" href="08_domain_checking.html">USA Proxy List</a>
+							<a class="navigation-dropdown-link" href="{{ Route('UsaProxies') }}">USA Proxy List</a>
                         </li>
 
                         <li class="navigation-dropdown-item">
-							<a class="navigation-dropdown-link" href="08_domain_checking.html">Clean Proxies</a>
+							<a class="navigation-dropdown-link" href="{{ Route('CleanProxies') }}">Clean Proxies</a>
                         </li>
 
 					</ul>
