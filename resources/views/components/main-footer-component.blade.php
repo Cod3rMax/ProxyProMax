@@ -18,7 +18,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="03_shared_host.html">
+								<a href="{{ Route('AllProxies') }}">
 									Free Proxy List
 									<svg class="crumina-icon">
 										<use xlink:href="#icon-triangle-arrow"></use>
@@ -26,7 +26,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="04_vps_host.html">
+								<a href="{{ Route('UKProxies') }}">
 									UK Proxy List
 									<svg class="crumina-icon">
 										<use xlink:href="#icon-triangle-arrow"></use>
@@ -34,7 +34,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="05_dedicated_server.html">
+								<a href="{{ Route('UsaProxies') }}">
 									USA Proxy List
 									<svg class="crumina-icon">
 										<use xlink:href="#icon-triangle-arrow"></use>
@@ -42,7 +42,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="06_cloud_hosting.html">
+								<a href="{{ Route('CleanProxies') }}">
 									Clean Proxy List
 									<svg class="crumina-icon">
 										<use xlink:href="#icon-triangle-arrow"></use>
@@ -60,7 +60,7 @@
 						</h5>
 						<ul>
 							<li>
-								<a href="07_domains.html">
+								<a href="{{ Route('ProxyChecker') }}">
 									Proxy Checker
 									<svg class="crumina-icon">
 										<use xlink:href="#icon-triangle-arrow"></use>
@@ -192,4 +192,3 @@
 
 @vite(["resources/js/app.js"])
 <script src="{{ asset('js/jquery.min.js') }}"></script>
-

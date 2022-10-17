@@ -63,7 +63,7 @@
 
 
 				<li class="navigation-item">
-                    <a class="navigation-link" href="17_contacts.html">Proxy Checker</a>
+                    <a class="navigation-link" href="{{ Route('ProxyChecker') }}">Proxy Checker</a>
 				</li>
 
 
