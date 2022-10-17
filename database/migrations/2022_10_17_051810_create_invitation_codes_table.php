@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('invitation_code');
             $table->string('used_for');
             $table->string('created_by')->nullable();
-            $table->string('used_by')->nullable();
+            $table->integer('used_by')->nullable();
             $table->boolean('is_used')->default(false);
             $table->timestamps();
         });

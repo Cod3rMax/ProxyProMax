@@ -169,7 +169,7 @@ export default {
             axios.post(this.registrationRoute, this.form)
             .then(response => {
                 console.log(response.data);
-                this.disableTextInputs = true;
+                //this.disableTextInputs = true;
                 this.showErrorsAlert = false;
                 this.showSuccessAlert = true;
                 this.messageSuccess = response.data[0];
