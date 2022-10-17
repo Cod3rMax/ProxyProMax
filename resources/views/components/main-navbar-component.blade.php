@@ -84,8 +84,7 @@
 				</li>
 
 
-
-				<li class="navigation-item">
+                <li class="navigation-item">
 					<a class="navigation-link" href="#">
 						Proxy Blog
 					</a>
@@ -100,6 +99,34 @@
 
 					</ul>
 				</li>
+
+
+                @if(Auth::check() && Auth::user()->UserConfirmation->confirmed)
+				<li class="navigation-item">
+					<a class="navigation-link" href="#">
+						Dashboard
+					</a>
+					<ul class="navigation-dropdown">
+
+						<li class="navigation-dropdown-item">
+							<a class="navigation-dropdown-link" href="14_submit_a_request.html">User info</a>
+						</li>
+
+                        <li class="navigation-dropdown-item">
+							<a class="navigation-dropdown-link" href="{{ Route('ChangeUserPassword') }}">Change password</a>
+						</li>
+
+                        <li class="navigation-dropdown-item">
+							<a class="navigation-dropdown-link" href="{{ Route('UserLogout') }}">Logout</a>
+						</li>
+
+                        <li class="navigation-dropdown-item">
+							<a class="navigation-dropdown-link" href="#">Account: <b> [{{ Auth::user()->UserRole->role }}]</b></a>
+						</li>
+
+					</ul>
+				</li>
+                @endif
 
 
 
