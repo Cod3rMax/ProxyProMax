@@ -47,4 +47,4 @@ Route::middleware('UsersConfirmationMiddleware')->post('Auth/UserConfirmation', 
 Route::post('ProxyChecker', [ProxyCheckerController::class,'CheckProxy'])->name('ProxyCheckerAPI');
 Route::get('ProxyList/AllProxies',[ProxiesController::class,'GetAllProxies'])->name('AllProxiesAPI');
 Route::get('ProxyList/UkProxies',[ProxiesController::class,'GetUkProxies'])->name('UkProxiesAPI');
-Route::get('ProxyList/UkProxies',[ProxiesController::class,'GetUsaProxies'])->name('UsaProxiesAPI');
+Route::get('ProxyList/CleanProxies',[ProxiesController::class,'GetCleanProxies'])->name('CleanProxiesAPI');

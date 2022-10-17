@@ -53,6 +53,7 @@ Route::get('ProxyChecker',[ProxyCheckerController::class,'index'])->name('ProxyC
 Route::get('AllProxies',[ProxiesController::class,'index'])->name('AllProxies');
 Route::get('UkProxies',[ProxiesController::class,'ukindex'])->name('UKProxies');
 Route::get('UsaProxies',[ProxiesController::class,'usaindex'])->name('UsaProxies');
+Route::get('CleanProxies',[ProxiesController::class,'cleanindex'])->name('CleanProxies');
 
 
 

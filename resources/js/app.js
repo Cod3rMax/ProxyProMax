@@ -38,10 +38,13 @@ import UsaProxiesComponent from "./components/ProxyList/UsaProxiesComponent.vue"
 app.component('usaproxies-component', UsaProxiesComponent);
 
 
+import CleanProxiesComponent from "./components/ProxyList/CleanProxiesComponent.vue";
+app.component('cleanproxies-component', CleanProxiesComponent);
+
+
 import ChangePasswordComponent from "./components/Auth/ChangePasswordComponent.vue";
 app.component('changepassword-component', ChangePasswordComponent);
 
-//ProxyCheckerComponent.vue
 import ProxyCheckerComponent from "./components/ProxyCheckerComponent.vue";
 app.component('proxychecker-component', ProxyCheckerComponent);
 
