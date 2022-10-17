@@ -93,6 +93,18 @@
                 />
               </div>
 
+
+              <div class="form-item">
+                <input
+                  class="input--dark input--squared"
+                  type="text"
+                  placeholder="Invitation Code (Optional)"
+                  v-model="form.invitation_code"
+                  v-bind:disabled="this.disableTextInputs"
+                />
+              </div>
+
+
               <div class="form-item">
                 <div class="remember-wrapper text-white">
                     <a v-bind:href="this.loginLink">
@@ -136,6 +148,7 @@ export default {
                 email: null,
                 password: null,
                 password_confirmation: null,
+                invitation_code: null,
             },
 
             disableTextInputs: false,

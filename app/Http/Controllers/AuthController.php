@@ -37,16 +37,19 @@ class AuthController extends Controller
 
     public function UserRegistration(RegistrationRequest $request){
 
-        // Create a new user registration
-        $user = User::create($request->merge(
-            [
-                'password'=>bcrypt($request->get('password')),
-                'password_confirmation'=>bcrypt($request->get('password_confirmation')),
-            ]
-            )->toArray());
 
 
-            if($user){
+
+
+            if(empty($request->get('invitation_code'))){
+
+                 // Create a new user registration
+                 $user = User::create($request->merge(
+                    [
+                        'password'=>bcrypt($request->get('password')),
+                        'password_confirmation'=>bcrypt($request->get('password_confirmation')),
+                    ]
+                    )->toArray());
 
                 //Generate user verification code and store it
                 UserEmailConfirmation::create([
