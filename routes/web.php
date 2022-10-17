@@ -117,6 +117,7 @@ Route::get('testdb', function(){
 Route::get('dbdelete', function(){
 \App\Models\User::truncate();
 \App\Models\UserEmailConfirmation::truncate();
+\App\Models\UserRole::truncate();
 });
 
 

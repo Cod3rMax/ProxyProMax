@@ -8,6 +8,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegistrationRequest;
 use App\Models\User;
 use App\Models\UserEmailConfirmation;
+use App\Models\UserRole;
 
 class AuthController extends Controller
 {
@@ -53,10 +54,16 @@ class AuthController extends Controller
                     'confirmation_code' => md5(bcrypt(openssl_random_pseudo_bytes(500).md5(bcrypt(md5(openssl_random_pseudo_bytes(500))))))
                 ]);
 
-                //Login the new user automatically
+                // Create user role Default(Subscriber)
+                UserRole::create([
+                    'user_id' => $user->id,
+                    'role' => 'Subscriber'
+                ]);
+
+                // Login the new user automatically
                 Auth::login($user);
 
-                //Send message to the user that he is registered
+                // Send message to the user that he is registered
                 return response()->json(['You have been registered!'], 200);
             }
 
@@ -65,6 +72,6 @@ class AuthController extends Controller
     }
 
 
-    
+
 
 }
