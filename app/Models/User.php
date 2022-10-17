@@ -49,5 +49,10 @@ class User extends Authenticatable
     }
 
 
+    public function UserRole(){
+        return $this->hasOne(\App\Models\UserRole::class);
+    }
+
+
 
 }
