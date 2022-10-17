@@ -19148,7 +19148,7 @@
         margin-left: auto; }
 
     .site-header--status {
-      background-image: url("backgrounds/main-section-bg2.png"); }
+      background-image: url("../img/backgrounds/main-section-bg2.png"); }
 
     /*================= Responsive Mode ============*/
     @media (max-width: 991px) {

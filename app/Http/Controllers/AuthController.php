@@ -137,4 +137,17 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Can not register the user'], 422);
     }
+
+
+
+
+
+
+
+
+    public function userinfoindex(){
+        return view('Auth.UserInfo');
+    }
+
+
 }

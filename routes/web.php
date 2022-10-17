@@ -37,6 +37,7 @@ Route::middleware('AuthenticatedUsersMiddleware')->group(function () {
 //User must be logged in to access this route!
 Route::middleware('auth:sanctum')->group(function(){
     Route::get('Auth/ChangePassword',[UserChangePasswordController::class,'index'])->name('ChangeUserPassword');
+    Route::get('User/UserInfo',[AuthController::class,'userinfoindex'])->name('UserInfi');
 });
 
 
