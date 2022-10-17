@@ -17,7 +17,8 @@ class InvitationCodeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'invitation_code' => md5(bcrypt(openssl_random_pseudo_bytes(500).md5(bcrypt(md5(openssl_random_pseudo_bytes(500)))))),
+            'used_for' => $this->faker->randomElement(['Subscriber','VIP','Moderator','Administrator']),
         ];
     }
 }
