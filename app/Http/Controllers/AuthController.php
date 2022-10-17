@@ -70,6 +70,14 @@ class AuthController extends Controller
                 return response()->json(['You have been registered!'], 200);
             }
 
+
+            //Here what to do when the invitation code is not empty
+
+            else if(!empty($request->get('invitation_code'))){
+
+            }
+
+
             return response()->json(['message' => 'Can not register the user'], 422);
 
     }
