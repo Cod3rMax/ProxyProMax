@@ -76,12 +76,13 @@
 
 
 
-
-
-							<div class="description-list-item">
-								<h6 class="fs-16">Description:</h6>
-								<p>Viverra aliquet eget sit amet tellus cras adipiscing. Nunc lobortis mattis aliquam faucibus purus in. Sem nulla pharetra diam sit. At lectus urna duis convallis convallis tellus id interdum velit sagittis aliquam. Amet consectetur adipiscing elit pellentesque habitant morbi tristique et.</p>
+                            <div class="description-list-item">
+								<h6 class="fs-16">Edit Password:</h6>
+								<span class="location-list"> <a href="{{ Route('ChangeUserPassword') }}" class="location-list-item">Change Password</a></span>
 							</div>
+
+
+
 						</div>
 					</div>
 
