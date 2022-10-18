@@ -81,7 +81,10 @@
 								<span class="location-list"> <a href="{{ Route('ChangeUserPassword') }}" class="location-list-item">Change Password</a></span>
 							</div>
 
-
+                            <div class="description-list-item">
+								<h6 class="fs-16">Close Account:</h6>
+								<span class="location-list"> <a href="#" class="location-list-item" onclick="alert('For now, to close your account you need to contact us.')">Delete my account</a></span>
+							</div>
 
 						</div>
 					</div>
