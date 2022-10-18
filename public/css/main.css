@@ -19302,7 +19302,7 @@
     .location-list {
       padding-left: 0;
       list-style: none;
-      margin-top: 20px; }
+     }
       .location-list li {
         display: inline-block;
         margin-bottom: 2px; }
@@ -19313,9 +19313,9 @@
         font-weight: 700;
         text-transform: uppercase;
         line-height: 1;
-        color: var(--dark-themes);
-        display: inline-block;
-        background-color: var(--yellow-themes); }
+        color: var(--yellow-themes);
+
+        background-color: var(--dark-themes); }
 
     .status-page-title {
       display: -webkit-box;

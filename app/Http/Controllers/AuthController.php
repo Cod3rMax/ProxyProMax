@@ -146,7 +146,8 @@ class AuthController extends Controller
 
 
     public function userinfoindex(){
-        return view('Auth.UserInfo');
+         $user =  Auth::user()->with(['UserConfirmation','UserRole'])->get();
+         return view('Auth.UserInfo', compact('user'));
     }
 
 
