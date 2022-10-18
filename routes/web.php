@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProxiesController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ProxyCheckerController;
+use App\Http\Controllers\ServerStatusController;
 use App\Http\Controllers\UserChangePasswordController;
 use App\Http\Controllers\UserEmailConfirmationController;
 
@@ -55,6 +56,7 @@ Route::get('AllProxies',[ProxiesController::class,'index'])->name('AllProxies');
 Route::get('UkProxies',[ProxiesController::class,'ukindex'])->name('UKProxies');
 Route::get('UsaProxies',[ProxiesController::class,'usaindex'])->name('UsaProxies');
 Route::get('CleanProxies',[ProxiesController::class,'cleanindex'])->name('CleanProxies');
+Route::get('ServerStatus',[ServerStatusController::class,'index'])->name('ServerStatus');
 
 
 
