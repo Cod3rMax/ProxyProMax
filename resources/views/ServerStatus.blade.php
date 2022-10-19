@@ -45,13 +45,12 @@
 
 
 <div class="main-content-wrapper">
-
 	<section class="pb-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 m-auto">
 					<div class="status-page-title bg-green-themes mt-negative35 mb-5">
-						<div class="title">All Systems Operational</div>
+						<div class="title">{{ $ServerActiveOperations >= 2 ? 'Systems Are Operational' : 'Some Operations Are Down' }}</div>
 						<div class="update-status">Updated a few seconds ago</div>
 					</div>
 					<h3>Server Status</h3>
@@ -59,19 +58,19 @@
 					<div class="row my-5">
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-4 mb-lg-0">
 							<div class="statistic-item">
-								<div class="statistic-item-value">0</div>
+								<div class="statistic-item-value">{{ $ServerActiveOperations }}</div>
 								<div class="statistic-item-descr">Active Operations</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-4 mb-lg-0">
 							<div class="statistic-item">
-								<div class="statistic-item-value">2</div>
+								<div class="statistic-item-value">{{ $ServerStoppedOperations }}</div>
 								<div class="statistic-item-descr">Stopped Operations</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 							<div class="statistic-item">
-								<div class="statistic-item-value">36</div>
+								<div class="statistic-item-value">{{ $ServerMaintenanceOperations }}</div>
 								<div class="statistic-item-descr">Active Maintenances</div>
 							</div>
 						</div>
@@ -87,13 +86,36 @@
 						</tr>
 						</thead>
 						<tbody>
+
+                            @foreach ($ServerStatus as $Operation)
+
+
                             <tr>
                                 <td>
-                                    <span>Dashboard</span>
+                                    <span>{{ $Operation->operation_name }}</span>
                                     <span class="info-icon info-icon--lime" data-toggle="tooltip" data-placement="top" title="here some shit about the operation">?</span>
                                 </td>
+
+                                @if ($Operation->is_active == 1)
+
                                 <td><span class="font-weight-bold c-lime">Operational</span></td>
+
+                                @elseif($Operation->is_active == 2)
+
+                                <td><span class="font-weight-bold c-orange">Under Maintenance</span></td>
+
+                                @else
+
+                                <td><span class="font-weight-bold c-red">Down</span></td>
+
+                                @endif
+
+
+
                             </tr>
+
+
+                            @endforeach
 						</tbody>
 					</table>
 

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('server_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('operation_name');
+            $table->string('operation_description');
             $table->boolean('is_active');
             $table->timestamps();
         });
