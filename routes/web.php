@@ -2,6 +2,8 @@
 
 use App\Models\Proxies;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewUserVerificationMail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProxiesController;
@@ -135,4 +137,12 @@ Route::get('testrelation', function(){
 
     }
     return "not logged";
+});
+
+
+
+Route::get('Mail', function(){
+    $code = "212121";
+    Mail::to("dzxxxw@gmail.com")->send(new NewUserVerificationMail($code));
+    //return new NewUserVerificationMail();
 });
