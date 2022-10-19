@@ -17,7 +17,8 @@ class ServerStatusFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'operation_name' => $this->faker->unique()->randomElement(['Proxy Scrapper','Auto Proxy Checker','Auth System']),
+            'is_active' => $this->faker->randomElement([true,false]),
         ];
     }
 }

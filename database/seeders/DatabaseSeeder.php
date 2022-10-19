@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(50)->hasUserConfirmation()->hasUserRole()->create();
         \App\Models\InvitationCode::factory(70)->create();
         \App\Models\Proxies::factory(200)->create();
+        \App\Models\ServerStatus::factory(3)->create();
         \App\Models\Subscribe::factory(50)->create();
         \App\Models\SocialMediaLink::factory(1)->create();
     }

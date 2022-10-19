@@ -60,19 +60,19 @@
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-4 mb-lg-0">
 							<div class="statistic-item">
 								<div class="statistic-item-value">0</div>
-								<div class="statistic-item-descr">Active Incidents</div>
+								<div class="statistic-item-descr">Active Operations</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-4 mb-lg-0">
 							<div class="statistic-item">
 								<div class="statistic-item-value">2</div>
-								<div class="statistic-item-descr">Active Maintenances</div>
+								<div class="statistic-item-descr">Stopped Operations</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 							<div class="statistic-item">
 								<div class="statistic-item-value">36</div>
-								<div class="statistic-item-descr">Days Since Last Incident</div>
+								<div class="statistic-item-descr">Active Maintenances</div>
 							</div>
 						</div>
 					</div>
