@@ -8,7 +8,7 @@
 			<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 m-auto">
 				<div class="navigation-header">
 					<div class="navigation-logo">
-						<a href="index.html">
+						<a href="{{ Route('MainPage') }}">
 
 
 							<img loading="lazy" src="{{ asset('img/logo.png') }}" alt="logo">
@@ -22,7 +22,7 @@
 				<div class="navigation-body">
 					<div class="navigation-body-header">
 						<div class="navigation-logo">
-							<a href="index.html">
+							<a href="{{ Route('MainPage') }}">
 
 
 								<img loading="lazy" src="{{ asset('img/logo.png') }}" alt="logo">
@@ -54,7 +54,7 @@
 						<div class="update-status">Updated a few seconds ago</div>
 					</div>
 					<h3>Server Status</h3>
-					<p>What server status do</p>
+					<p>The status describes what function the server is currently performing, or performing in a cluster. Statuses can changed by developer, so if anything doesn't work please check this page or our social media platforms.</p>
 					<div class="row my-5">
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-4 mb-lg-0">
 							<div class="statistic-item">
@@ -93,7 +93,7 @@
                             <tr>
                                 <td>
                                     <span>{{ $Operation->operation_name }}</span>
-                                    <span class="info-icon info-icon--lime" data-toggle="tooltip" data-placement="top" title="here some shit about the operation">?</span>
+                                    <span class="info-icon info-icon--lime" data-toggle="tooltip" data-placement="top" title="{{ $Operation->operation_description }}">?</span>
                                 </td>
 
                                 @if ($Operation->is_active == 1)
