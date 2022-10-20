@@ -142,7 +142,7 @@ Route::get('testrelation', function(){
 
 
 Route::get('Mail', function(){
-    $code = "212121";
-    Mail::to("dzxxxw@gmail.com")->send(new NewUserVerificationMail($code));
-    //return new NewUserVerificationMail();
+    // $code = "212121";
+    Mail::to("dzxxxw@gmail.com")->send(new NewUserVerificationMail());
+    return new NewUserVerificationMail();
 });

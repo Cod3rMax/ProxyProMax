@@ -11,7 +11,9 @@ class NewUserVerificationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+
     public $code;
+
 
     /**
      * Create a new message instance.

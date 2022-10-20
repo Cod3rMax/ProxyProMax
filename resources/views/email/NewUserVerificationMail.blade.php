@@ -1,10 +1,13 @@
 @component('mail::message')
-# ProxyProMax Email Verification
+
+<center><img loading="lazy" src="{{ asset('img/logo.png') }}" alt="logo"></center>
+
+# ProxyProMax Account Verification
 
 Please use the code below to verify your account.
 
 @component('mail::panel')
-Code will be here {{ $code }}
+{{ $code }}
 @endcomponent
 
 Thanks,<br>

@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\UserRole;
 use Illuminate\Http\Request;
+use App\Models\InvitationCode;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewUserVerificationMail;
+use App\Models\UserEmailConfirmation;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegistrationRequest;
-use App\Models\InvitationCode;
-use App\Models\User;
-use App\Models\UserEmailConfirmation;
-use App\Models\UserRole;
 
 class AuthController extends Controller
 {
@@ -41,7 +43,7 @@ class AuthController extends Controller
     public function UserRegistration(RegistrationRequest $request)
     {
 
-
+        $code = md5(bcrypt(openssl_random_pseudo_bytes(500) . md5(bcrypt(md5(openssl_random_pseudo_bytes(500))))));
 
 
 
@@ -58,7 +60,7 @@ class AuthController extends Controller
             //Generate user verification code and store it
             UserEmailConfirmation::create([
                 'user_id' => $user->id,
-                'confirmation_code' => md5(bcrypt(openssl_random_pseudo_bytes(500) . md5(bcrypt(md5(openssl_random_pseudo_bytes(500))))))
+                'confirmation_code' => $code
             ]);
 
             // Create user role Default(Subscriber)
@@ -69,6 +71,12 @@ class AuthController extends Controller
 
             // Login the new user automatically
             Auth::login($user);
+
+
+            // Mail the verification code to the user
+
+            Mail::to($user->email)->send(new NewUserVerificationMail($code));
+
 
             // Send message to the user that he is registered
             return response()->json(['You have been registered!'], 200);
@@ -101,7 +109,7 @@ class AuthController extends Controller
                     //Generate user verification code and store it
                     UserEmailConfirmation::create([
                         'user_id' => $user->id,
-                        'confirmation_code' => md5(bcrypt(openssl_random_pseudo_bytes(500) . md5(bcrypt(md5(openssl_random_pseudo_bytes(500))))))
+                        'confirmation_code' => $code
                     ]);
 
 
@@ -117,6 +125,12 @@ class AuthController extends Controller
                         'used_by' => $user->id,
                         'is_used' => true,
                     ]);
+
+
+                    // Mail the verification code to the user
+
+                    Mail::to($user->email)->send(new NewUserVerificationMail($code));
+
 
                     // Login the new user automatically
                     Auth::login($user);
