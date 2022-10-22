@@ -31,22 +31,28 @@ class RegisterUserWithoutInvitationCodeListener
      */
     public function handle($event)
     {
-                    // Create a new user registration
-                    $user = User::create($event->user);
 
-                    //Generate user verification code and store it
-                    UserEmailConfirmation::create([
-                        'user_id' => $user->id,
-                        'confirmation_code' => $event->code
-                    ]);
+        if (!$event->userIsInvited) {
 
-                    // Create user role Default(Subscriber)
-                    UserRole::create([
-                        'user_id' => $user->id,
-                        'role' => 'Subscriber'
-                    ]);
+            // Create a new user registration
+            $user = User::create($event->user);
 
-                    // Login the new user automatically
-                    Auth::login($user);
+            //Generate user verification code and store it
+            UserEmailConfirmation::create([
+                'user_id' => $user->id,
+                'confirmation_code' => $event->code
+            ]);
+
+            // Create user role Default(Subscriber)
+            UserRole::create([
+                'user_id' => $user->id,
+                'role' => 'Subscriber'
+            ]);
+
+            // Login the new user automatically
+            Auth::login($user);
+
+        }
+
     }
 }

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\NewUserRegistredEvent;
 use App\Models\User;
 use App\Models\UserRole;
 use App\Models\InvitationCode;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use App\Events\NewUserRegistredEvent;
 use App\Mail\NewUserVerificationMail;
 use App\Models\UserEmailConfirmation;
 use App\Http\Requests\Auth\LoginRequest;
@@ -43,8 +43,6 @@ class AuthController extends Controller
     public function UserRegistration(RegistrationRequest $request)
     {
 
-
-
         $code = md5(bcrypt(openssl_random_pseudo_bytes(500) . md5(bcrypt(md5(openssl_random_pseudo_bytes(500))))));
         $user = $request->merge(
             [
@@ -66,6 +64,8 @@ class AuthController extends Controller
         }
 
 
+
+        
         // Here what to do when the invitation code is not empty
 
         else if (!empty($request->get('invitation_code'))) {
