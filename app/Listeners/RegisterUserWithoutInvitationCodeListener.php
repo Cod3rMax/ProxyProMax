@@ -48,12 +48,5 @@ class RegisterUserWithoutInvitationCodeListener
 
                     // Login the new user automatically
                     Auth::login($user);
-
-
-                    // Mail the verification code to the user
-
-                    Mail::to($user->email)->send(new NewUserVerificationMail($event->code));
-
-
     }
 }

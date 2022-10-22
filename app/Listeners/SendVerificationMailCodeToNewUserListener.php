@@ -2,8 +2,10 @@
 
 namespace App\Listeners;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewUserVerificationMail;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SendVerificationMailCodeToNewUserListener
 {
@@ -25,6 +27,8 @@ class SendVerificationMailCodeToNewUserListener
      */
     public function handle($event)
     {
-        //
+        // Mail the verification code to the user
+
+       Mail::to($event->user['email'])->send(new NewUserVerificationMail($event->code));
     }
 }
