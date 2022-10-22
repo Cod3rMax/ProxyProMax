@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewUserRegistredEvent;
 use App\Models\User;
 use App\Models\UserRole;
-use Illuminate\Http\Request;
 use App\Models\InvitationCode;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -43,43 +43,26 @@ class AuthController extends Controller
     public function UserRegistration(RegistrationRequest $request)
     {
 
+
+
         $code = md5(bcrypt(openssl_random_pseudo_bytes(500) . md5(bcrypt(md5(openssl_random_pseudo_bytes(500))))));
+        $user = $request->merge(
+            [
+                'password' => bcrypt($request->get('password')),
+                'password_confirmation' => bcrypt($request->get('password_confirmation'))
+            ]
+        )->toArray();
 
 
+        // Here what to do when the invitation code is empty
 
         if (empty($request->get('invitation_code'))) {
+            event(new NewUserRegistredEvent($user, $code, false));
 
-            // Create a new user registration
-            $user = User::create($request->merge(
-                [
-                    'password' => bcrypt($request->get('password')),
-                    'password_confirmation' => bcrypt($request->get('password_confirmation')),
-                ]
-            )->toArray());
+            if (User::where('email', '=', $request->get('email'))->get()->count()) {
 
-            //Generate user verification code and store it
-            UserEmailConfirmation::create([
-                'user_id' => $user->id,
-                'confirmation_code' => $code
-            ]);
-
-            // Create user role Default(Subscriber)
-            UserRole::create([
-                'user_id' => $user->id,
-                'role' => 'Subscriber'
-            ]);
-
-            // Login the new user automatically
-            Auth::login($user);
-
-
-            // Mail the verification code to the user
-
-            Mail::to($user->email)->send(new NewUserVerificationMail($code));
-
-
-            // Send message to the user that he is registered
-            return response()->json(['You have been registered!'], 200);
+                return response()->json(["You have been registered!"], 200);
+            }
         }
 
 
@@ -98,12 +81,7 @@ class AuthController extends Controller
 
 
                     // Create a new user registration
-                    $user = User::create($request->merge(
-                        [
-                            'password' => bcrypt($request->get('password')),
-                            'password_confirmation' => bcrypt($request->get('password_confirmation')),
-                        ]
-                    )->toArray());
+                    $user = User::create($user);
 
 
                     //Generate user verification code and store it
