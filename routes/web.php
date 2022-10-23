@@ -11,6 +11,7 @@ use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ProxyCheckerController;
 use App\Http\Controllers\ServerStatusController;
 use App\Http\Controllers\UserChangePasswordController;
+use App\Http\Controllers\UserContactSupportController;
 use App\Http\Controllers\UserEmailConfirmationController;
 
 /*
@@ -70,7 +71,7 @@ Route::get('ServerStatus',[ServerStatusController::class,'index'])->name('Server
 
 
 
-
+Route::get('UserSupport/ContactUS', [UserContactSupportController::class, 'index'])->name('ContactUS');
 Route::get('PrivacyPolicy', function(){ return view('PrivacyPolicy'); })->name('PrivacyPolicy');
 Route::get('Terms', function(){ return view('Terms'); })->name('Terms');
 
@@ -137,12 +138,4 @@ Route::get('testrelation', function(){
 
     }
     return "not logged";
-});
-
-
-
-Route::get('Mail', function(){
-    // $code = "212121";
-    Mail::to("dzxxxw@gmail.com")->send(new NewUserVerificationMail());
-    return new NewUserVerificationMail();
 });

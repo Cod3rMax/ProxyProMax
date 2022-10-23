@@ -45,8 +45,13 @@ app.component('cleanproxies-component', CleanProxiesComponent);
 import ChangePasswordComponent from "./components/Auth/ChangePasswordComponent.vue";
 app.component('changepassword-component', ChangePasswordComponent);
 
+
 import ProxyCheckerComponent from "./components/ProxyCheckerComponent.vue";
 app.component('proxychecker-component', ProxyCheckerComponent);
+
+
+import ContactUsComponent from "./components/UserSupport/ContactUsComponent.vue";
+app.component('contactus-component', ContactUsComponent);
 
 
 const options = {
