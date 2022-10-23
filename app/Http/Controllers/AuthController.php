@@ -65,7 +65,7 @@ class AuthController extends Controller
 
 
 
-        
+
         // Here what to do when the invitation code is not empty
 
         else if (!empty($request->get('invitation_code'))) {
@@ -80,43 +80,16 @@ class AuthController extends Controller
                 if (!$InvitationCode->first()->is_used) {
 
 
-                    // Create a new user registration
-                    $user = User::create($user);
-
-
-                    //Generate user verification code and store it
-                    UserEmailConfirmation::create([
-                        'user_id' => $user->id,
-                        'confirmation_code' => $code
-                    ]);
-
-
-                    // Create user role acording to the invitation code
-                    UserRole::create([
-                        'user_id' => $user->id,
-                        'role' => $InvitationCode->first()->used_for
-                    ]);
-
-
-                    // Update the invitation code (used_by, is_used)
-                    $InvitationCode->update([
-                        'used_by' => $user->id,
-                        'is_used' => true,
-                    ]);
-
-
-                    // Mail the verification code to the user
-
-                    Mail::to($user->email)->send(new NewUserVerificationMail($code));
-
-
-                    // Login the new user automatically
-                    Auth::login($user);
+                    event(new NewUserRegistredEvent($user, $code, true, $InvitationCode->first()));
 
                     // Send message to the user that he is registered
-                    return response()->json(['You have been registered!'], 200);
-                } else {
+                    if (User::where('email', '=', $request->get('email'))->get()->count()) {
 
+                        return response()->json(["You have been registered!"], 200);
+                    }
+
+
+                } else {
 
                     return response()->json(['message' => 'invitation code used!'], 422);
                 }

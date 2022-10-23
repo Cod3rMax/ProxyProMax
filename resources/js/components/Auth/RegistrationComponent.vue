@@ -174,9 +174,9 @@ export default {
                 this.showSuccessAlert = true;
                 this.messageSuccess = response.data[0];
 
-            //     setInterval(() => {
-            //     window.location.href = this.confirmationRoute;
-            // }, 2500);
+                setInterval(() => {
+                window.location.href = this.confirmationRoute;
+            }, 2500);
 
             })
             .catch(error => {

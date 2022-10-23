@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class InvitationCode extends Model
 {
     use HasFactory;
+
+    public $guarded = [];
+
 }

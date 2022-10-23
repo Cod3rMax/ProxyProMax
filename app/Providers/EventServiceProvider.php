@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Events\NewUserRegistredEvent;
+use App\Listeners\RegisterUserWithInvitationCodeListener;
 use App\Listeners\RegisterUserWithoutInvitationCodeListener;
 use App\Listeners\SendVerificationMailCodeToNewUserListener;
 use Illuminate\Auth\Events\Registered;
@@ -24,6 +25,7 @@ class EventServiceProvider extends ServiceProvider
 
         NewUserRegistredEvent::class => [
             RegisterUserWithoutInvitationCodeListener::class,
+            RegisterUserWithInvitationCodeListener::class,
             SendVerificationMailCodeToNewUserListener::class,
         ]
     ];

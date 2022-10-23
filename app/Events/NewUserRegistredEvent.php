@@ -17,18 +17,20 @@ class NewUserRegistredEvent
     public $user;
     public $code;
     public $userIsInvited;
+    public $userInvitationCode;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($user, $code, $userIsInvited)
+    public function __construct($user, $code, $userIsInvited, $userInvitationCode = null)
     {
         //
         $this->user = $user;
         $this->code = $code;
         $this->userIsInvited = $userIsInvited;
+        $this->userInvitationCode = $userInvitationCode;
     }
 
     /**
